@@ -1,0 +1,38 @@
+<!--
+  Generated template for the SelectFollowersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar text-center>
+    <ion-title class="model-title">Select Followers</ion-title>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-searchbar (ionInput)="filterItems($event)"></ion-searchbar>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list class="modal-list">
+    <ion-item *ngFor="let followers of followersList">
+        <ion-checkbox (ionChange)="updateCbValue(followers,$event)" color="secondary" [checked]="followers.checked" item-end></ion-checkbox>
+      <ion-avatar item-start>
+          <img *ngIf="followers.logo!=null" src="{{followers.logo}}" />
+          <img  *ngIf="followers.logo==null" src="assets/business-logo/user-default.png" />
+        
+      </ion-avatar>
+      <ion-label class="uname">{{followers.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+<ion-row >
+<ion-col  text-center>
+    <button type="button" ion-button clear (click)="setFollowers()">Select</button>
+  </ion-col>
+</ion-row>
+</ion-footer>

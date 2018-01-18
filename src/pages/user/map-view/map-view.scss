@@ -1,0 +1,103 @@
+page-map-view {
+     #map {
+        height: 100%;
+      }
+      #map a img { display:none; } 
+      
+      .gm-style-cc{
+        display:none;
+      }
+    .title-header{
+        background-color: color($colors,theme-blue-button) !important;
+       padding-top:8px !important;
+    }
+    .toolbar-title{
+        color:#fff !important; 
+    }
+     .location-err{
+        color:color($colors,theme-blue-button) !important;
+        font-size: 25px;
+        margin-top: 50%;
+        white-space: initial;
+    }
+    .logo{
+       width: 30%;
+        border-radius: 50%;
+        top:0; 
+        left:0;
+        float: left;
+        margin-right: 3%;
+        width: 62px;
+        height: 62px;
+        max-width: unset;    
+        object-fit: cover;
+        border: 3px solid #3667b1;
+    }
+    .title2{
+       font-size: 20px;
+       font-family: HelveticaNeue-Medium;
+        width: 230px;
+    }
+    .ad1{
+        //position: absolute;
+        top:10%;
+        right:0;
+        font-size: 15px;
+    }
+    .ad2{
+        //position: absolute;
+        top:10%;
+        font-size: 12px;
+        right:0;
+    }
+   
+    .dir-btn{
+        background-color: color($colors,theme-dark-blue-button);
+        color:#fff;
+        font-size: 15px;
+        margin-top:5%;
+        padding: 2% 5%;
+        border-radius: 3px;
+        margin-left: 32%;
+        
+    }
+    @media (min-width:414px){
+        .dir-btn{
+            margin-left: 0px;
+        }
+    }
+    .dir-a{
+        text-decoration: none;
+        color:#fff !important;
+        font-size: 15px;
+    }
+    .item-list{
+        margin:0 !important;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+       // top: 0;
+        left: 0;
+        right: 0;
+        //bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 2;
+        cursor: pointer;
+    }
+    .gm-style .gm-style-iw{
+        color:color($colors,theme-blue-button) !important;
+        left:0px;
+
+    }
+   .search-bar{
+        background-color: color($colors,theme-blue-button) !important;
+        font-size: 0.5em;
+   }
+    @media (min-width:414px){
+        .logo{
+            max-width: unset;
+            width: 70px;
+            height: 70px;
+        }
+    }
+}

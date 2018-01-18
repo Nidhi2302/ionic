@@ -1,0 +1,26 @@
+<!--
+  Generated template for the SplashVideoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>splashVideo</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content no-padding>
+  <!-- <img src="assets/demoGif.gif"  width="100%" height="600px"/>poster="assets/drawable-port-xxhdpi-screen.png" autobuffer -->
+ 
+  <video id="myVideo"  poster="assets/drawable-port-xxhdpi-screen.png" width="100%" height="100%" autoplay loop playsinline>
+    <source src="assets/splashvideo.m4v" onerror="fallback(parentNode)">
+  </video>
+  <ion-icon name="md-volume-up" [hidden]="videoMute" (click)="toggleMute()" class="volume"></ion-icon>
+  <ion-icon name="qupey-sound" [hidden]="!videoMute" (click)="toggleMute()" class="volume2"></ion-icon>
+  <button class="btn-continue" type="button" ion-button (click)="continue()" clear>Continue</button>
+  
+</ion-content>

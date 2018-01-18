@@ -1,0 +1,239 @@
+page-user-update-profile {
+ .logo-img{
+      width: 100px;
+      border-radius: 50%;
+      height: 100px;
+      object-fit: cover;
+    }
+.camera-icon{
+  font-size: 1.5em;
+  position: absolute;
+  bottom: 8px;
+  right: 7px;
+  color:#fff;
+}
+.camera-profile-icon-back{
+  position: relative;
+  right: 18%;
+  top: 100px;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 18px 18px;
+  display: inline-block;
+}
+.camera-profile-icon{
+  font-size: 1.5em;
+  position: absolute;
+  bottom: 8px;
+  right: 7px;
+  color: #666666;
+}
+.back-arrow{
+        //position: absolute;
+        top: 25px;
+        left: 7%;
+        color: color($colors,font-color);
+        font-size: 3em;
+        z-index: 1;
+    }
+ .business-logo {
+    position: absolute;
+    top: 34px !important;
+    right: 130px !important;
+    left: 0 !important;
+  }
+ .toolbar-title{
+      text-align: left !important;
+      font-family: HelveticaNeue-Roman !important;
+      font-weight: unset !important;
+    }
+    .dis-name{
+      max-width: 117px;
+      div{
+      color:#6692cd !important;      
+      }
+      margin-right: 0px !important;
+    }
+    .title-md.dis-name{
+      max-width: 125px;
+    }
+    .title-md.usrname{
+    max-width: 100px;
+    }
+    .title-md.email{
+      max-width: 67px;
+    }
+    
+    .toolbar-title-md{
+      padding: 0px 0 0 16px;
+    }
+    .usrname{
+      max-width: 90px;
+      div{
+        color:#6692cd !important;      
+        }
+      margin-right: 0px !important;
+    }
+    .email{
+      max-width: 54px;
+      div{
+        color:#6692cd !important;      
+        }
+      margin-right: 0px !important;
+    }
+    .website{
+      max-width: 74px;
+      color:#6692cd;
+      margin-right: 0px !important;
+    }
+    .twitter{
+      max-width: 64px;
+      margin-right: 0px !important;
+    }
+    .facebook{
+      max-width: 90px;
+      margin-right: 0px !important;
+    }
+
+    ion-col input{
+      padding:0px;
+    }
+    .divide-line{
+      background-color:rgba(149,152,154,0.7);
+      height: 1px;
+      width: 92%;
+      margin: 0px 13px;
+  }
+  .business-name{
+        color: color($colors,font-color);
+       // margin-top:15%;
+        margin-bottom: 0px;
+        font-family: HelveticaNeue-Roman !important;
+    }
+    .save{
+        color: color($colors,font-color);
+        font-family: HelveticaNeue-Roman !important;
+    }
+    .labelemail .item-inner {
+      color: color($colors,font-color);
+      font-size: 12px;
+      padding: 0px !important;
+      border-bottom: none !important;
+    }
+
+
+    .with-help-text{
+      margin-bottom:0px !important;
+    }
+    .help-text{
+      font-size:13px;
+      color:#95989a;
+      padding-left:16px;
+      position: relative;
+      top: -10px;
+    }
+
+    .profileaddress{
+       color: color($colors,font-color);
+      //margin: 10px 0px 0px 16px !important;
+      text-align: right;
+    }
+
+    .locationtitle{
+      margin: 0px 0px 0px 56px !important;
+      font-size: 1.7rem;
+    }
+    .link-row{
+      margin-right: 0px;
+      font-size: 1.7rem;
+    }
+    .link-col-lft{
+      margin-right:0px;
+      margin-left:11px;
+    }
+    .gray-color{
+      color:#6692cd;
+    }
+    .link-col-rgt{
+     margin-top:11px;
+      //margin-left:11px;
+    }
+    .item-block {
+      min-height: 30px !important;
+    }
+    .link-label{
+      margin-bottom: 0px;
+      margin-top: 0px;
+    }
+
+    .row-title{
+      margin: 0px 8px 0px 0 !important;
+      color:#6692cd;
+      font-family: HelveticaNeue-Roman !important;
+    }
+    .email .item-inner {
+       color: color($colors,font-color);
+       padding: 0px !important;
+      border-bottom: none !important;
+    }
+    ion-textarea.profiletextarea.input.input-ios .text-input {
+      height: 85px !important;
+    }
+    ion-textarea.profiletextarea.input.input-md .text-input {
+      height: 85px !important;
+    }
+    input{
+      margin: 0px !important;
+          border: none !important;
+    }
+    .displayname .item-inner{
+
+          border-top: 0.55px solid #c8c7cc;
+    }
+    .item-input ion-input, .item-input ion-textarea {
+      position: static;
+      color: #95989a;
+      font-family: HelveticaNeue-Roman !important;
+    }
+    .text-box{
+        border: none!important;
+        width: 100%;
+         color: #95989a;
+        font-family: HelveticaNeue-Roman !important;
+        -webkit-appearance: none;
+
+    }
+
+    textarea{
+        height: 100px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin:0px !important;
+        position: relative;
+        top: -2px;
+    }
+    .btn-next{
+      color: color($colors,font-color);
+      //float: right;
+    }
+    .list-ios[inset] .item{
+      border: none !important;
+    }
+    .list-md[inset] .item{
+      border: none !important;
+    }
+    .toolbar-title-md{
+      font-size: unset;
+  }
+  textarea.text-input-md{
+      margin-left: 15px !important;
+      margin-top: 0px !important;
+  }
+    ion-list{
+      margin:0px !important;
+    }
+    .scroll-content{
+  margin-top:133px !important;
+}
+}

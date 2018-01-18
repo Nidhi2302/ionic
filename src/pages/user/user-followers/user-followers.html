@@ -1,0 +1,58 @@
+
+
+<ion-content padding>
+        <ion-card class="profile-card-wrapper" no-margin>
+                <ion-item  no-padding class="profile-page-item">
+                        <ion-avatar text-center>
+                                <img src="{{loggedinUser.logo}}" *ngIf="loggedinUser.logo!=null">
+                                <img src="assets/business-logo/user-default.png" *ngIf="loggedinUser.logo==null">
+                            </ion-avatar>
+                            <h2 class="user-name" text-center>{{loggedinUser.name}}
+                               
+                            </h2>
+                            <h3 class="user-id" text-center>@{{loggedinUser.username}}</h3>
+                            <p class="user-des" text-center >{{loggedinUser.user_basic_information}}</p>
+                    <ion-row class="text-following">
+                        <ion-col col-4 >
+                            <ion-icon name="arrow-back" class="back-arrow" (click)="previous()"></ion-icon>
+                        </ion-col>
+                        <ion-col class="follow" text-center col-4 >
+                            <h2>Following</h2>
+                        </ion-col>
+                        <ion-col col-4 ></ion-col>
+                    </ion-row>
+    
+                </ion-item>
+    
+            </ion-card>
+    <ion-list class="listofusers">
+        <ion-item no-padding no-margin class="list-item" *ngFor="let vendor of vendorList" no-padding>
+            <ion-row>
+                <ion-col col-2>
+                    <img src="{{vendor.logo_url}}" *ngIf="vendor.logo_url!=null"/>
+                    <img src="assets/business-logo/user-default.png" *ngIf="vendor.logo_url==null" />
+                </ion-col>
+                <ion-col class="uname" col-6>
+                    <h2 class="wrap-word">{{vendor.vendorname}}</h2>
+                </ion-col>
+                <ion-col col-4 class="btn-col">
+                    <button type="button" class="flw-btn" ion-button  *ngIf="vendor.status=='Unfollow'" color="theme-blue-button">Follow</button>
+                    <button type="button"  class="flw-btn" ion-button *ngIf="vendor.status=='Follow'" color="theme-red-button" (click)="setFollwer(vendor)">Unfollow</button>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+       
+        <ion-item class="no-record" *ngIf="vendorList.length==0" text-center>
+                <ion-label class="no-record-label">
+                    You don't have any followers currently
+                </ion-label>
+            </ion-item>
+    </ion-list>
+    <ion-infinite-scroll  (ionInfinite)="doInfiniteFollower($event)" threshold="100px">
+            <ion-infinite-scroll-content
+              loadingSpinner="bubbles"
+              loadingText="Loading more data...">
+            </ion-infinite-scroll-content>
+          </ion-infinite-scroll>
+   
+</ion-content>

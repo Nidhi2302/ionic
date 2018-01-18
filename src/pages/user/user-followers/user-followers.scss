@@ -1,0 +1,199 @@
+page-user-followers {
+    .scroll-content{
+        //margin-top: 270px !important;
+      margin-bottom: 10px;
+      overflow-y: hidden;
+      }
+    .logout {
+        position: absolute;
+        bottom: 0;
+        margin-top: 15%;
+        object-fit: cover;
+    }
+    .title-header {
+        background-color: #fff !important;
+    }
+    .toolbar-title {
+        color: #fff !important;
+    }
+    .listofusers {
+        margin: -1px 0 5px;
+        box-shadow: unset;
+        height: 350px;
+        overflow-y: scroll;
+      }
+      .listofusers .item-inner{
+          padding:0 !important;
+      }
+      .uname{
+        font-family: HelveticaNeue-Roman !important;
+        font-size: 22px;
+        padding: 15px 0 0 5px;
+        color: rgb(14,109,178);
+    }
+    .no-record{
+        border: none !important;
+        color: color($colors,font-color);
+      }
+      .btn-col{
+          padding-top:8px !important;
+      }
+      .no-record-label{
+        white-space: initial;
+      }
+      .list-ios > .item-block:first-child {
+        border-top: none;
+     }
+     .list-md > .item-block:first-child {
+        border-top: none;
+     }
+     .list-md{
+        height: 300px !important;
+     }
+     .item-inner ion-label{
+         margin:0 !important;
+     }
+     .item-inner{
+         padding:0px !important;
+     }
+    .profile-card-wrapper {
+        background: transparent;
+        box-shadow: unset;
+        width: 100%;
+        
+    }
+    .user-name {
+        font-family: HelveticaNeue-Bold;
+        //font-weight: bold;
+        color:#6692CD;
+        font-size: 23px;
+        padding-top: 10px;
+        .icon {
+            color: #6692CD;
+            font-size: 24px;
+        }
+    }
+    .follow{
+        padding-top:20px;
+        h2{color: #6692CD !important;}
+        font-family: HelveticaNeue-Bold;
+    }
+    .user-id {
+        font-size: 15px;
+        color: #8B8989;
+        font-family: HelveticaNeue-Roman;
+    }
+    ion-col img {
+        border-radius: 50%;
+        height: 50px !important;
+        margin: 0 auto;
+        overflow: hidden;
+        max-width: unset ;
+        width: 50px !important;
+        object-fit: cover;
+        border: 2px solid color($colors,font-color);
+    }
+    ion-avatar img {
+        border-radius: 50%;
+        height: 100px !important;
+        margin: 0 auto;
+        overflow: hidden;
+        object-fit: cover;
+        width: 100px !important;
+        border: 2px solid #6692CD;
+    }
+    .flw-btn{
+        height: 30px;
+        font-size: 18px;
+        width: 100%;
+        padding: 0px 0;
+        margin: 0px 0;
+        font-weight: 400;
+    }
+    .back-arrow{
+        font-size: 2.3em;
+        padding: 6px;
+    }
+    .user-des {
+        font-size: 14px;
+        color: #000;
+        margin: 7px 0 20px 0;
+        white-space: nowrap; 
+        // width: 24.5em; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-family: HelveticaNeue-Roman;
+    }
+    .wrap-word{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 8em;
+    }
+    ion-avatar {
+        margin-top: 30px;
+    }
+    .list-item{
+        border-bottom: 1px solid rgba(149, 152, 154,0.2) !important;
+    }
+    .text-following {
+        border-bottom: 2px solid #cccccc;
+        border-top: 1px solid #cccccc;
+        color: #8b8989;
+        font-size: 15px;
+        padding: 0px 0;
+        font-family: HelveticaNeue-Roman;
+        
+    }
+    .sub-total-text {
+        font-size: 15px;
+        text-align: center;
+        color: #999999;
+    }
+    .sub-total-followers {
+        color: #6692cd;
+        font-size: 37px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .border-bottom {
+        border-bottom: 1px solid #cccccc;
+    }
+    .res-name-wrapper {
+        border-bottom: 1px solid #cccccc;
+        box-shadow: unset;
+        // margin-bottom: 4px;
+        margin: 0 13px;
+        img {
+            margin-left: 12px;
+            vertical-align: middle;
+            width: 14px;
+        }
+        .item-inner {
+            border-bottom: medium none;
+        }
+        .label {
+            margin: 0 !important;
+        }
+        .rest-name-btn {
+            font-size: 19px;
+            color: #999999;
+        }
+        
+        
+    }
+    @media (min-width:414px){
+        .listofusers{
+            height: 420px;            
+        }
+        ion-col img {
+            width: 50px !important;
+            height: 50px !important; 
+        }
+    }
+    @media only screen and (max-height:600px){
+        .listofusers{
+            height: 235px !important;            
+        }
+    }       
+}

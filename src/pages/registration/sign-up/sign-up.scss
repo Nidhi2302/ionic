@@ -1,0 +1,98 @@
+page-sign-up {
+
+    .iconStyle{
+        margin: 5% auto;
+        width: 90px;
+    }
+    form{
+        
+       // margin-top:55%;
+        .item-inner{
+            border:none !important;
+            padding: 0px !important;
+        }
+        .item-block:first-child {
+              border:none !important;
+        }
+        ion-input{
+    border: 1px solid color($colors,font-color);
+    padding-left: 12px;
+    border-radius: 3px;
+    color: color($colors,font-color);
+    font-size:20px;
+    font-family: HelveticaNeue-Roman;
+    
+        }
+        ion-item{
+            margin-top: 10px !important;
+            margin-bottom: 10px !important;
+        }
+        .item-ios{
+            padding: 0px;
+        }
+        .item-md{
+            padding: 0px;
+        }
+        p{
+            margin: 0px !important;
+        } 
+        button{
+            color:#fff !important;
+            //border: 1px solid color($colors,font-color) !important;
+           margin-top:12px !important;
+            font-size:20px !important;
+    font-family: HelveticaNeue-Roman;
+        }
+        ion-list {
+
+             margin: 0px !important;
+        }
+        hr{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            height: 1px !important;
+            background-color:rgba(175,177,179,1) !important;
+        }
+        input::placeholder {
+                color: color($colors,font-color);
+
+        }
+    }
+    .login-text{
+        color: color($colors,font-color);
+        font-size: 15px;
+        text-align: center;
+       // padding-left:40px;
+    }
+    .btn-social{
+        color: #fff !important;
+        border: none !important;
+        margin-top: 5% !important;
+    }
+    .button-md-facebook{
+      margin-top: 5% !important;
+    }
+    .divider {
+    color: color($colors,font-color) !important;
+    text-align:center;
+    margin-top: 5%;
+}
+
+.divider hr {
+    margin-left:auto;
+    margin-right:auto;
+    width:40%;
+
+}
+.list-md .item-input:last-child{
+    border-bottom:none !important; 
+}
+.left {
+    float:left;
+}
+
+.right {
+    float:right;
+}
+
+}

@@ -1,0 +1,49 @@
+<!--
+  Generated template for the OtpVerifyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <!--<ion-navbar>
+    <ion-title>otpVerify</ion-title>
+  </ion-navbar>-->
+
+</ion-header>
+
+
+<ion-content padding>
+    <div text-center>
+        <img class="iconStyle" *ngIf="userType=='user'" src="assets/icon/user-logo/logo.png" />
+        <img class="iconStyle" *ngIf="userType=='vendor'" src="assets/icon/vendor-logo/logoVendor.png" />
+      </div>
+  <form [formGroup]="otpVerifyForm" novalidate>
+    <ion-label color="font-color" stacked>Your 4 digit verification code has been sent. Please enter it below.</ion-label>
+    <ion-row>
+      <ion-col>
+        <input type="password" id="otpDigit1" pattern="[0-9]*" formControlName="fDigit" inputmode="numeric" maxlength=1 minlength=1
+          text-center />
+      </ion-col>
+      <ion-col>
+        <input type="password" id="otpDigit2" pattern="[0-9]*" formControlName="sDigit" inputmode="numeric" maxlength=1 minlength=1
+          text-center />
+      </ion-col>
+      <ion-col>
+        <input type="password" id="otpDigit3" pattern="[0-9]*" formControlName="tDigit" inputmode="numeric" maxlength=1 minlength=1
+          text-center />
+      </ion-col>
+      <ion-col>
+        <input type="password" id="otpDigit4" pattern="[0-9]*" formControlName="foDigit" inputmode="numeric" maxlength=1 minlength=1
+          text-center />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-label color="font-color" (click)="resendOTP()" stacked text-center>Resend</ion-label>
+    </ion-row>
+    <div [ngClass]="{'last-btn':userType=='user','last-btn2':userType!='user'}">
+      <button type="button" ion-button class="btn-previous" (click)="previous()" clear>Previous</button>
+      <button type="button" ion-button class="btn-next" (click)="next(otpVerifyForm.value, otpVerifyForm.valid)" clear [disabled]=!otpVerifyForm.valid>Next</button>
+    </div>
+  </form>
+</ion-content>

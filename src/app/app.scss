@@ -1,0 +1,104 @@
+// http://ionicframework.com/docs/v2/theming/
+
+@import "../../node_modules/ionic2-auto-complete/auto-complete";
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.slide-logo-img{
+    width: 100px;
+    border-radius: 50%;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #3667b1;
+    }
+    .business-logo{
+        position: absolute;
+        top: 20%;
+        left:30%;
+        
+        }
+        .md .business-logo{
+            position: absolute;
+            top: 24%;
+            left:30%;
+            
+            }
+.logo-img{
+    width: 150px;
+    border-radius: 50%;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #3667b1;
+    }
+.menu-list{
+        margin-top:20%;
+        margin-left: 10%;
+    }
+.menu-item{
+    border: none !important;
+    color: color($colors,font-color);
+    font-size: 20px;
+    }
+.item-inner{
+    border: none !important;
+}
+.business-background{
+    height: 200px;
+    width: 1245px;
+    object-fit: cover;
+}
+.tab-button{
+    padding:4px 2px !important;
+}
+*::-webkit-media-controls-start-playback-button {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+ ion-icon {
+    &[class*="qupey-"] {
+        // Instead of using the font-based icons
+        // We're applying SVG masks
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background: currentColor;
+        width: 1em;
+        height: 1em;
+    }
+    // custom icons
+    &[class*="qupey-wallet"] {
+        mask-image: url(../assets/icon/icon/wallet.svg);
+    }
+     &[class*="qupey-close"] {
+        mask-image: url(../assets/icon/close.svg);
+    }
+    &[class*="qupey-discover"] {
+        mask-image: url(../assets/icon/icon/discover.svg);
+    }
+    &[class*="qupey-favorites"] {
+        mask-image: url(../assets/icon/icon/favorites.svg);
+    }
+    &[class*="qupey-nearby"] {
+        mask-image: url(../assets/icon/icon/nearby.svg);
+    }
+    &[class*="qupey-profile"] {
+        mask-image: url(../assets/icon/icon/shape4.svg);
+    }
+    &[class*="qupey-camera"] {
+        mask-image: url(../assets/icon/camera.svg);
+    }
+    &[class*="qupey-sound"] {
+        mask-image: url(../assets/icon/sound.svg);
+    }
+
+}

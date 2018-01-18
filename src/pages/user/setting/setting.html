@@ -1,0 +1,74 @@
+
+
+<ion-content padding>
+    <ion-card class="profile-card-wrapper" no-margin>
+        <ion-item no-padding class="profile-page-item">
+          <ion-avatar text-center>
+            <img src="{{loggedinUser.logo}}" *ngIf="loggedinUser.logo!=null">
+            <img src="assets/business-logo/user-default.png" *ngIf="loggedinUser.logo==null">
+          </ion-avatar>
+          <h2 class="user-name" text-center>{{loggedinUser.name}}
+          </h2>
+          <h3 class="user-id" text-center>@{{loggedinUser.username}}</h3>
+          <p class="user-des" text-center>{{loggedinUser.user_basic_information}}</p>
+          <ion-row class="text-following">
+            <ion-col col-4 >
+              <ion-icon name="arrow-back" class="back-arrow" (click)="previous()"></ion-icon>
+            </ion-col>
+            <ion-col class="follow" text-center  col-4 >
+              <h2>Notifications</h2>
+            </ion-col>
+            <ion-col col-4 ></ion-col>
+          </ion-row>
+  
+        </ion-item>
+  
+      </ion-card>
+  <ion-list class="listofusers">
+    <ion-row class="row-cont">
+      <ion-col col-9>
+        <h5 class="setting">New Qupeys</h5>
+        <p class="help-text">Notify me when a new qupey is created by a business I follow</p>
+      </ion-col>
+      <ion-col col-3>
+        <ion-item no-padding>
+            <ion-toggle class="toggle" (ionChange)="saveSetting('newQupeyNotify',newQupey)" [(ngModel)]="newQupey" no-padding></ion-toggle>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row-cont">
+        <ion-col col-9>
+          <h5 class="setting">Expiring Qupeys</h5>
+          <p class="help-text">Notify me when one of my qupeys is about to expire</p>
+        </ion-col>
+        <ion-col col-3>
+          <ion-item no-padding>
+              <ion-toggle class="toggle" (ionChange)="saveSetting('expQupeyNotify',expQupey)" no-padding [(ngModel)]="expQupey"></ion-toggle>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row-cont">
+          <ion-col col-9>
+            <h5 class="setting">Redemptions</h5>
+            <p class="help-text">Notify me when a qupey I shared is redeemed</p>
+          </ion-col>
+          <ion-col col-3>
+            <ion-item no-padding>
+                <ion-toggle class="toggle" (ionChange)="saveSetting('redemptionNotify',redemption)" [(ngModel)]="redemption" no-padding></ion-toggle>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row class="row-cont">
+            <ion-col col-9>
+              <h5 class="setting">New Businesses</h5>
+              <p class="help-text">Notify me when a new business is added</p>
+            </ion-col>
+            <ion-col col-3>
+              <ion-item no-padding>
+                  <ion-toggle class="toggle" (ionChange)="saveSetting('newBusinessNotify',newBusiness)" no-padding [(ngModel)]="newBusiness"></ion-toggle>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+  </ion-list>
+  
+</ion-content>

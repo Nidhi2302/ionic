@@ -1,0 +1,137 @@
+{
+    "name": "qupey-ionic-app",
+    "version": "0.0.1",
+    "author": "Ionic Framework",
+    "homepage": "http://ionicframework.com/",
+    "private": true,
+    "scripts": {
+        "clean": "ionic-app-scripts clean",
+        "build": "ionic-app-scripts build",
+        "lint": "ionic-app-scripts lint",
+        "ionic:build": "ionic-app-scripts build",
+        "ionic:serve": "ionic-app-scripts serve"
+    },
+    "dependencies": {
+        "@agm/core": "^1.0.0-beta.0",
+        "@angular/common": "4.1.3",
+        "@angular/compiler": "4.1.3",
+        "@angular/compiler-cli": "4.1.3",
+        "@angular/core": "4.1.3",
+        "@angular/forms": "4.1.3",
+        "@angular/http": "4.1.3",
+        "@angular/platform-browser": "4.1.3",
+        "@angular/platform-browser-dynamic": "4.1.3",
+        "@ionic-native/badge": "^4.3.2",
+        "@ionic-native/camera": "^4.1.0",
+        "@ionic-native/core": "3.12.1",
+        "@ionic-native/device": "^4.0.0",
+        "@ionic-native/facebook": "^4.0.0",
+        "@ionic-native/file": "^4.1.0",
+        "@ionic-native/file-path": "^4.1.0",
+        "@ionic-native/geolocation": "^4.1.0",
+        "@ionic-native/google-plus": "^4.0.1",
+        "@ionic-native/keyboard": "^4.1.0",
+        "@ionic-native/media": "^4.1.0",
+        "@ionic-native/network": "^4.0.0",
+        "@ionic-native/social-sharing": "^4.3.1",
+        "@ionic-native/splash-screen": "3.12.1",
+        "@ionic-native/status-bar": "3.12.1",
+        "@ionic-native/stripe": "^4.0.0",
+        "@ionic-native/transfer": "^3.14.0",
+        "@ionic/storage": "2.0.0",
+        "@types/cordova": "0.0.34",
+        "@types/cordova-plugin-device": "0.0.3",
+        "angular2-text-mask": "^8.0.3",
+        "branch-cordova-sdk": "^2.6.18",
+        "cordova-android": "^6.4.0",
+        "cordova-browser": "^4.1.0",
+        "cordova-ios": "^4.4.0",
+        "cordova-plugin-badge": "^0.8.5",
+        "cordova-plugin-camera": "^2.4.1",
+        "cordova-plugin-compat": "^1.1.0",
+        "cordova-plugin-console": "^1.0.5",
+        "cordova-plugin-device": "^1.1.4",
+        "cordova-plugin-facebook4": "^1.9.1",
+        "cordova-plugin-file": "^4.3.3",
+        "cordova-plugin-file-transfer": "^1.6.3",
+        "cordova-plugin-filepath": "^1.0.2",
+        "cordova-plugin-geolocation": "^2.4.3",
+        "cordova-plugin-googlemaps": "^2.0.11",
+        "cordova-plugin-googleplus": "^5.1.1",
+        "cordova-plugin-network-information": "^1.3.3",
+        "cordova-plugin-splashscreen": "^4.0.3",
+        "cordova-plugin-statusbar": "^2.2.2",
+        "cordova-plugin-stripe": "^1.5.3",
+        "cordova-plugin-whitelist": "^1.3.1",
+        "cordova-plugin-x-socialsharing": "^5.2.0",
+        "es6-promise-plugin": "^4.1.0",
+        "gulp": "^3.9.1",
+        "ionic-angular": "^3.5.3-201707261447",
+        "ionic-native": "^2.2.3",
+        "ionic-plugin-keyboard": "^2.2.1",
+        "ionic2-auto-complete": "^1.5.2-beta",
+        "ionicons": "3.0.0",
+        "node-sass": "^4.6.1",
+        "phonegap-plugin-push": "^2.0.0",
+        "rxjs": "5.4.0",
+        "sw-toolbox": "3.6.0",
+        "xml2js": "^0.4.19",
+        "zone.js": "0.8.12"
+    },
+    "devDependencies": {
+        "@ionic/app-scripts": "2.0.0",
+        "@ionic/cli-plugin-cordova": "1.4.0",
+        "@ionic/cli-plugin-ionic-angular": "1.3.1",
+        "@types/googlemaps": "^3.26.17",
+        "ionic": "3.7.0",
+        "typescript": "2.3.4"
+    },
+    "description": "An Ionic project",
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-console": {},
+            "cordova-plugin-device": {},
+            "cordova-plugin-splashscreen": {},
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-whitelist": {},
+            "ionic-plugin-keyboard": {},
+            "cordova-plugin-network-information": {},
+            "cordova-plugin-stripe": {},
+            "cordova-plugin-facebook4": {
+                "APP_ID": "289515451568232",
+                "APP_NAME": "“Qupey”"
+            },
+            "cordova-plugin-googleplus": {
+                "REVERSED_CLIENT_ID": "com.googleusercontent.apps.1041857800006-h6hsavnp4subpf0q27d4utjtsa4q9607"
+            },
+            "cordova-plugin-camera": {
+                "CAMERA_USAGE_DESCRIPTION": " ",
+                "PHOTOLIBRARY_USAGE_DESCRIPTION": " "
+            },
+            "cordova-plugin-file": {},
+            "cordova-plugin-file-transfer": {},
+            "cordova-plugin-filepath": {},
+            "cordova-plugin-geolocation": {
+                "GEOLOCATION_USAGE_DESCRIPTION": " "
+            },
+            "phonegap-plugin-push": {},
+            "cordova-plugin-x-socialsharing": {},
+            "cordova-plugin-badge": {},
+            "cordova-plugin-googlemaps": {
+                "API_KEY_FOR_ANDROID": "AIzaSyDcezsdeBiSU203uP85ko-yrFx8d0TW-pA",
+                "API_KEY_FOR_IOS": "AIzaSyACU5C3Hrp4_uw-S3K7YtDv0mfAxgO0Qg4",
+                "LOCATION_WHEN_IN_USE_DESCRIPTION": "Show your location on the map",
+                "LOCATION_ALWAYS_USAGE_DESCRIPTION": "Trace your location on the map"
+            },
+            "branch-cordova-sdk": {
+                "BRANCH_KEY": "key_live_noqHh8kLIr12wrfI4mky7badsygpIvS7",
+                "URI_SCHEME": "qupey"
+            }
+        },
+        "platforms": [
+            "android",
+            "browser",
+            "ios"
+        ]
+    }
+}

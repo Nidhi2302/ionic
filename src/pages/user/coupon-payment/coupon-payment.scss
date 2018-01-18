@@ -1,0 +1,79 @@
+page-coupon-payment {
+    .scroll-content{
+        padding-top: 20px !important;
+    }
+    form{
+        ion-input{
+        border: 1px solid color($colors,font-color);
+        padding-left: 12px;
+        border-radius: 3px;
+        color: color($colors,font-color);
+        font-size: 18px;
+            }
+            ion-datetime{
+                border: 1px solid color($colors,font-color);
+        // padding-left: 12px;
+        border-radius: 3px;
+        height: 43px;
+    font-size: 20px;
+    color:color($colors,font-color);
+       
+            }
+            .item-ios{
+                padding: 0px;
+            }
+            .item-md{
+                padding: 0px;
+            }
+            .btn-payment{
+                color:#fff !important;
+               margin-top:12px !important;
+            }
+            
+            input::placeholder {
+                    color: color($colors,font-color);
+            }
+            ion-label{
+                font-size:20px !important;
+            }
+            ion-select{
+                 border: 1px solid color($colors,font-color);
+                padding-left: 12px;
+                border-radius: 3px;
+                padding: 10px 8px 8px 11px !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                height: 43px;
+                font-size: 18px;
+                color:color($colors,font-color);
+                    margin-top: 5%;
+            }
+            .left {
+        float:left;
+    }
+    
+    .right {
+        float:right;
+    }
+            
+        }
+        .title{
+                color:color($colors,theme-blue-button);
+                font-weight: bold;
+                padding-left:73px;
+                padding-top:6px;
+            }
+        .selectCustom {
+        .select-text {
+            min-width: 95%;
+        }
+        .item-cover {
+            position: relative !important;
+        }
+    }
+    .back-arrow{
+        color: #000;
+        font-size: 2em;
+        z-index: 1;
+    }
+}

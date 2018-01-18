@@ -1,0 +1,58 @@
+page-splash-video {
+    // video::-webkit-media-controls {
+    //     display:none !important;
+    //     opacity: 0;
+    // }
+    .scroll-content{
+        overflow-y: hidden !important;
+    }
+    .main{
+        position: relative;
+    }
+    .volume{
+        color:#fff;
+        font-size: 1.5em;
+        top: 30px;
+        position: absolute;
+        right: 20px;
+    }
+    .volume2{
+        color:#fff; 
+        font-size:  6.6em;
+        top: 31px;
+        position: absolute;
+        right: -55px;
+    }
+   
+    .btn-continue{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: #fff;
+        z-index:1;
+    }
+    *::-webkit-media-controls-start-playback-button {
+        display: none!important;
+        -webkit-appearance: none;
+      }
+  /* New shadow dom for play button */
+  
+  /* This one works */
+  
+//   *::-webkit-media-controls-start-playback-button {
+//     display: none!important;
+//     -webkit-appearance: none;
+//   }
+  
+// video {
+//     position: fixed;
+//     top: 50%;
+//     left: 50%;
+//     min-width: 100%;
+//     min-height: 100%;
+//     width: auto;
+//     height: auto;
+//     z-index: -100;
+//     transform: translateX(-50%) translateY(-50%);
+// } 
+}

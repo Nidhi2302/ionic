@@ -1,0 +1,51 @@
+
+
+<ion-content padding>
+    <ion-card class="profile-card-wrapper" no-margin>
+        <ion-item no-padding class="profile-page-item">
+          <ion-avatar text-center>
+            <img src="{{loggedinUser.logo}}" *ngIf="loggedinUser.logo!=null">
+            <img src="assets/business-logo/user-default.png" *ngIf="loggedinUser.logo==null">
+          </ion-avatar>
+          <h2 class="user-name" text-center>{{loggedinUser.name}}
+          </h2>
+          <h3 class="user-id" text-center>@{{loggedinUser.username}}</h3>
+          <p class="user-des" text-center>{{loggedinUser.user_basic_information}}</p>
+          <ion-row class="text-following">
+            <ion-col class="follow" text-center no-padding>
+              <h2>Wallet</h2>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-card>
+  <ion-grid no-padding>
+    <ion-list class="res-name-wrapper" no-margin>
+      <ion-item no-padding  [ngClass]="{'coupondetail':coupon.qupey_type!='Advance Purchase Required','coupondetail-darkblue':coupon.qupey_type=='Advance Purchase Required'}" *ngFor = "let coupon of couponList">
+        <ion-row class="couponrow">
+            <ion-col col-4>
+              <img [ngClass]="{'logo-img-coupon':coupon.qupey_type!='Advance Purchase Required','logo-img-coupon-blue':coupon.qupey_type=='Advance Purchase Required'}" src="{{coupon.logo_url}}" *ngIf="coupon.logo_url!=null" />
+              <img [ngClass]="{'logo-img-coupon':coupon.qupey_type!='Advance Purchase Required','logo-img-coupon-blue':coupon.qupey_type=='Advance Purchase Required'}" src="assets/business-logo/user-default.png" *ngIf="coupon.logo_url==null"/>
+              <p class="expires">Expires {{coupon.expiration_date | todate}}</p>
+            </ion-col>
+            <ion-col col-8>
+              <p class="coupon-title" *ngIf="coupon.qupey_type != 'No Fee' && coupon.qupey_type != 'Advance Purchase Required' &&coupon.qupey_type != 'Other'">{{coupon.qupey_type}}</p>
+              <p class="coupon-title" *ngIf="coupon.qupey_type == 'No Fee' || coupon.qupey_type == 'Advance Purchase Required' || coupon.qupey_type == 'Other'">{{coupon.coupon_name}}</p>
+              <p class="description">{{coupon.discription}}</p></ion-col>
+        </ion-row>
+        <ion-row class="couponbutton">
+            <ion-col col-6>
+              <h2 class="coupon-button" *ngIf="coupon.qupey_type != 'Advance Purchase Required'" text-left (click)="openModalWithParams(coupon)">Use</h2>
+              <h2 class="coupon-button" *ngIf="coupon.qupey_type == 'Advance Purchase Required' && coupon.payment" text-left (click)="openModalWithParams(coupon)">Use</h2>
+              <h2 class="coupon-button" *ngIf="coupon.qupey_type == 'Advance Purchase Required' && !coupon.payment" text-left (click)="openModalWithParams(coupon)">Buy</h2>
+            </ion-col>
+            <ion-col col-6><h2 class="coupon-button" text-right (click)="shareCoupon(coupon)">Share</h2></ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item class="no-record" text-center *ngIf="couponList.length==0">
+        <ion-label>
+          No Qupey found
+        </ion-label>
+      </ion-item>
+     </ion-list>
+     </ion-grid>
+</ion-content>

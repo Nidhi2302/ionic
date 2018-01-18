@@ -1,0 +1,36 @@
+
+<ion-content padding>
+    <ion-card class="profile-card-wrapper" no-margin>
+        <ion-item no-padding class="profile-page-item">
+          <ion-avatar text-center>
+            <img src="{{loggedinUser.logo}}" *ngIf="loggedinUser.logo!=null">
+            <img src="assets/business-logo/user-default.png" *ngIf="loggedinUser.logo==null">
+          </ion-avatar>
+          <h2 class="user-name" text-center>{{loggedinUser.name}}
+          </h2>
+          <h3 class="user-id" text-center>@{{loggedinUser.username}}</h3>
+          <p class="user-des" text-center>{{loggedinUser.user_basic_information}}</p>
+          <ion-row class="text-following">
+            <ion-col col-4 >
+              <ion-icon name="arrow-back" class="back-arrow" (click)="previous()"></ion-icon>
+            </ion-col>
+            <ion-col class="follow" text-center  col-4 >
+              <h2>Activity</h2>
+            </ion-col>
+            <ion-col col-4 > </ion-col>
+
+          </ion-row>
+        </ion-item>
+      </ion-card>
+<ion-list class="listofusers" no-padding no-margin>
+  <div *ngFor="let htmlStr of listMsg"> 
+  <div [innerHTML]="htmlStr.notifyMsg" class="main-row" no-padding>
+  </div>
+</div>
+<ion-item class="no-record" text-center *ngIf="listMsg.length==0">
+    <ion-label>
+      No Activity found
+    </ion-label>
+  </ion-item>
+</ion-list>
+</ion-content>

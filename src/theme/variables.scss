@@ -1,0 +1,186 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+@font-face {
+  font-family: 'HelveticaNeue-Roman';
+  src: url('../assets/fonts/Helvetica-Neue-Roman.eot') format('embedded-opentype');
+  src:url('../assets/fonts/Helvetica-Neue-Roman.ttf') format('truetype');
+  src:url('../assets/fonts/Helvetica-Neue-Roman.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HelveticaNeue-Bold';
+  src:url('../assets/fonts/helvetica-neue-bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HelveticaNeue-Medium';
+  src:url('../assets/fonts/Helvetica-Neue-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+.user-icon{
+
+}
+.vendor-icon{
+
+}
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #488aff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  theme-button:rgb(227 ,227 ,227),
+  font-color:rgb(149, 152, 154),
+  facebook:rgb( 59, 89, 152),
+  google:rgb(218 ,75, 66),
+  theme-blue-button:rgb(102,146,205),
+  theme-dark-blue-button: rgb(54 ,103 ,177),
+  lineclor:rgb(228 ,228 ,228),
+  coponcolor:rgb(226,223,223),
+  theme-red-button:rgb(205,102,102)
+);
+// .toast-style{
+// background-color:rgba(54 ,103 ,177,0.6);
+// color:#fff;
+// }
+$toast-ios-background:(#3667b1);
+$toast-md-background:(#3667b1);
+$toast-wp-background:(#3667b1);
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+// *{
+//   font-family: HelveticaNeue-Light !important;
+// }
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+// $tabs-ios-tab-color:rgba(#8c8c8c, 0.7);
+// $tabs-ios-tab-icon-color-active: color($colors, primary);
+
+.tabs-md .tab-button {
+  color: #FFC400 !important;
+ }
+
+ .tabs-md .tab-button[aria-selected=true] {
+   color: #DD2C00 !important;
+ }
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+@import "ionic.ionicons";
+
+.user-icon{
+    background: url('./../assets/icon/user-logo/logo.png') no-repeat;
+    background-size: 100%;
+    width: 90px;
+    height: 125px;
+}
+.vendor-icon{
+ background: url('./../assets/icon/vendor-logo/logoVendor.png') no-repeat;
+    background-size: 100%;
+    width: 90px;
+    height: 142px;
+}
+
+.button-md{
+  text-transform: unset;
+}
+.list-md .item-block .item-inner{
+  box-shadow: unset !important;
+}
+.text-input-md{
+  margin:11px 8px 11px 0 !important;
+}
+.md .swiper-pagination-bullets{
+bottom: 25px !important;
+}
+.toolbar-background-md{
+  background: #6692cd !important;
+  }
+  .toolbar-md{
+    min-height: 44px !important;
+  }
+
+  .item-md[detail-push] .item-inner, button.item-md:not([detail-none]) .item-inner, a.item-md:not([detail-none]) .item-inner{
+    background-image: url("data:image/svg+xml;charset=utf-8,<svg%20xmlns='http://www.w3.org/2000/svg'%…><path%20d='M2,20l-2-2l8-8L0,2l2-2l10,10L2,20z'%20fill='%23c8c7cc'/></svg>");
+    background-position: right 14px center;
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+  }
+  .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before{
+    background-image: unset !important;
+    
+  }
+  video{
+    object-fit: fill;
+  }
+  .list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child{
+    box-shadow: unset;
+    border-bottom-color:unset !important;
+    border-bottom: unset !important;
+  }
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";

@@ -1,0 +1,121 @@
+
+.ios, .md {
+
+  page-on-boarding-slider {
+    .scroll-content{
+        overflow: hidden;
+    }
+    ion-slides {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    ion-slide
+    {
+       ion-card {
+            position: relative;
+            background-color: #6692cd;
+            margin: 0px;
+            width: auto;
+            height: 100%;
+            font-family: HelveticaNeue-Light !important;
+        }
+   .slide-zoom{
+     height: 100%;
+   }
+   .card-title.retail{
+        margin-top: 35.3%;
+        font-size: 100px;
+        right: 8px;
+    }
+    .card-title.experts{
+        margin-top: 43.4%;
+        font-size: 75px;
+        right: 5px;
+    }
+
+    .card-title.friend{
+        margin-top: 38%;
+        font-size: 100px;
+        right: 5px;
+    }
+    .card-title.celebs{
+        margin-top: 40.3%;
+        font-size: 89px;
+        right: 2px;
+    }
+        .card-title {
+            position: absolute;
+            width: 100%;
+            color: #fff;
+            text-transform: uppercase;
+
+        }
+        ion-card-content p{
+            color: #fff;
+            text-align: left;
+            font-size:1.4rem;
+            padding-bottom: 4px;
+        }
+
+    }
+    .swiper-pagination-bullet
+        {
+                width: 15px !important;
+                height: 15px !important;
+                background: #fff;
+                opacity:1;
+
+
+        }
+        .swiper-pagination-bullet-active{
+            background: rgb(54 ,103 ,177);
+        }
+.swiper-pagination-bullets{
+    bottom: 45px;
+}
+.btn-rgt-continue{
+    color: #fff;
+    text-align: right;
+    padding-right: 12px;
+    margin-right: 5%;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+
+  }
+  .btn-continue{
+    color: #fff;
+    //text-align: right;
+    padding-right: 12px;
+    margin-right: 5%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+
+  }
+  .mid-txt{
+    font-weight: bold;
+    color:rgb(54 ,103 ,177);
+  }
+  @media only screen and (max-height:600px){
+    ion-card-content p{
+        font-size: 1.3rem !important;
+    }
+  }
+  }
+
+
+}
+.ios{
+    page-on-boarding-slider {
+        ion-slide{
+            ion-card-content p{
+                color: #fff;
+                text-align: left;
+                font-size:1.5rem;
+                padding-bottom: 4px;
+            }
+        }
+    }
+}

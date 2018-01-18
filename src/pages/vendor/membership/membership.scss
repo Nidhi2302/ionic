@@ -1,0 +1,108 @@
+page-membership {
+
+      .business-background{
+        height: 200px;
+        width: 1245px;
+        position: relative;
+      }
+
+      .business-logo-member{
+        top: 30px;
+        }
+        .logo-img-member{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #3667b1;
+          }
+
+          .back-arrow{
+            top: 80px;
+            left: 7%;
+            color: rgb(177,179,181);
+            font-size: 3em;
+            z-index: 1;
+        }
+        // .followers .title{
+        //     border-top: 0.55px solid #c8c7cc;
+        //  }
+         .followers_title .toolbar-title{
+            color: color($colors,theme-blue-button);
+            font-family: HelveticaNeue-Bold !important;
+            margin-top: 0px;
+            padding-bottom: 3px;
+            font-weight: bold;
+          }
+        .business-name{
+            color: #6692cd;
+            margin-top:17px;
+              margin-bottom: 0px;
+              font-family: HelveticaNeue-Roman !important;
+        }
+        .business-blue-name{
+            color: color($colors,theme-blue-button);
+            margin-bottom: 0px;
+            margin-top: 3%;
+            font-size:20px;
+            font-family: HelveticaNeue-Bold !important;
+        }
+        .scroll-content{
+            margin-top:200px !important;
+        }
+        .gray-div{
+            width:100%;
+            height:50px;
+            border-bottom: 1px solid rgba(149,152,154,0.2);
+            border-top: 1px solid rgba(149,152,154,0.2);
+            background-color: rgb(228,228,228);
+            margin-top:5%;
+        }
+        .gray-div-fir{
+            width:100%;
+            height:50px;
+            border-bottom: 1px solid rgba(149,152,154,0.2);
+            border-top: 1px solid rgba(149,152,154,0.2);
+            background-color: rgb(228,228,228);
+        }
+        .divide-line{
+            background-color: rgba(149,152,154,0.2);
+            height: 1px;
+            width: 90%;
+            margin-top: 3%;
+        }
+        .plan-dis{
+            color: color($colors,font-color);
+           margin-left: 22px;
+           margin-right: 22px;
+            font-size:15px;
+            white-space: initial;
+            font-family: HelveticaNeue-Roman !important;
+        }
+        .click-blue-name{
+            color: color($colors,theme-blue-button);
+            margin-bottom: 0px;
+            margin-top: 3%;
+            font-size:18px;
+            font-family: HelveticaNeue-Bold !important;
+            cursor: pointer;
+        }
+     .create-btn{
+        font-family: HelveticaNeue-Bold !important;
+        font-size: 20px;
+        padding: 5px 14px;
+   }
+   .btn-row{
+    padding: 25px 0;
+   }
+    .subtitle{
+         color: color($colors,font-color);
+        font-size:12px;
+        font-family: HelveticaNeue-Roman !important;
+    }
+    .description{
+         color: #000;
+        font-size:20px;
+        font-family: HelveticaNeue-Roman !important;
+    }
+}

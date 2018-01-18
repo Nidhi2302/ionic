@@ -1,0 +1,294 @@
+<!--
+  Generated template for the CreateCouponPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-header>
+  <ion-row no-padding>
+    <ion-col col-12 no-padding>
+      <img src="{{businessBack}}" class="business-background" />
+    </ion-col>
+  </ion-row>
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col col-4 class="back-arrow">
+        <ion-icon name="arrow-back" (click)="clickMenu()"></ion-icon>
+      </ion-col>
+      <ion-col col-8 text-center>
+        <div class="business-logo">
+          <img class="logo-img" src="{{businessLogo}}" />
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <h3 class="business-name">{{this.loggedinUser.name}}</h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-header>
+
+<ion-content>
+  <ion-row *ngIf="!isCouponAvl">
+    <ion-col text-center>
+      <ion-label class="row-title">{{msg}}</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-grid no-padding *ngIf="isCouponAvl">
+    <form [formGroup]="qupeyForm" novalidate>
+      <ion-row class="gray-div">
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <ion-label class="row-title">Name Your Qupey</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <input class="text-box qupey-text" type="text" formControlName="qupeyName" placeholder="Qupey Name" />
+        </ion-col>
+      </ion-row>
+      <ion-row class="gray-div">
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <ion-label class="row-title">Select Discount Type</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-item *ngFor="let dicountType of discountTypes;let indx = index">
+        <hr class="divide-line" />
+        <ion-label class="toggle-title">{{dicountType.type}}</ion-label>
+        <!-- <ion-toggle (ionChange)="toggleDiscountClick($event,dicountType,'discountType')" [checked]="isTrue(dicountType,'discountType')" [(ngModel)] = "dicountType.status" [ngModelOptions]="{standalone: true}"></ion-toggle> -->
+        <ion-toggle (ionChange)="toggleDiscountClick($event,dicountType,'discountType',discountTypes)" [checked]="dicountType.status"
+          [(ngModel)]="dicountType.status" [ngModelOptions]="{standalone: true}"></ion-toggle>
+      </ion-item>
+  
+
+      <ion-grid *ngIf="qupeyForm.get('discountType').value== 'Dollar Amount'">
+        <ion-row class="gray-div">
+        </ion-row>
+        <ion-row>
+          <ion-col text-center>
+            <ion-label class="row-title">Qupey Type</ion-label>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-item *ngFor="let types of flatFee;let indx = index">
+          <hr class="divide-line" />
+          <ion-label class="toggle-title">{{types.type}}</ion-label>
+          <ion-toggle (ionChange)="toggleDiscountClick($event,types,'flatFee',flatFee)" [checked]="types.status" [(ngModel)]="types.status"
+            [ngModelOptions]="{standalone: true}"></ion-toggle>
+        </ion-item>
+
+        <ion-grid *ngIf="qupeyForm.get('flatFee').value== 'Advance Purchase Required'">
+
+          <ion-row>
+            <ion-col text-center>
+              <ion-label class="row-title">Available Amount</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-3>
+            </ion-col>
+            <ion-col col-6>
+              <input class="text-box am" type="tel" ng-pattern="/^([0-9]*)$/" formControlName="ava_amount" placeholder="" />
+            </ion-col>
+            <ion-col col-3>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col text-center>
+              <ion-label class="row-title">Purchase Amount</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-3>
+            </ion-col>
+            <ion-col col-6>
+              <input class="text-box am" type="tel" ng-pattern="/^([0-9]*)$/" formControlName="pur_amount" placeholder="" />
+            </ion-col>
+            <ion-col col-3>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-grid>
+      <!-- ####################### -->
+      <ion-grid *ngIf="qupeyForm.get('discountType').value== 'Percentage'">
+        <ion-row class="gray-div">
+        </ion-row>
+        <ion-row>
+          <ion-col text-center>
+            <ion-label class="row-title">Select Discount Percentage</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-item *ngFor="let types of percentage;let indx = index">
+          <hr class="toggle-divide-line" />
+          <ion-label class="toggle-title">{{types.type}}</ion-label>
+          <ion-toggle (ionChange)="toggleDiscountClick($event,types,'percentage',percentage)" [checked]="types.status" [(ngModel)]="types.status"
+            [ngModelOptions]="{standalone: true}"></ion-toggle>
+        </ion-item>
+      </ion-grid>
+      <!-- ####################### -->
+      <ion-grid *ngIf="qupeyForm.get('discountType').value== 'Punchcard'">
+        <ion-row class="gray-div">
+        </ion-row>
+        <ion-row>
+          <ion-col text-center>
+            <ion-label class="row-title">Select number of purchases required to unlock reward</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-item *ngFor="let types of countDown;let indx = index">
+          <hr class="toggle-divide-line" />
+          <ion-label class="toggle-title">{{types.type}}</ion-label>
+          <ion-toggle (ionChange)="toggleDiscountClick($event,types,'countDown',countDown)" [checked]="types.status" [(ngModel)]="types.status"
+            [ngModelOptions]="{standalone: true}"></ion-toggle>
+        </ion-item>
+      </ion-grid>
+      <!--#########################-->
+
+      <ion-row class="gray-div">
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-label class="row-title" text-center>Description</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <textarea class="text-box" type="text" formControlName="description" placeholder="Description"></textarea>
+        </ion-col>
+      </ion-row>
+      <ion-row class="gray-div">
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <ion-label class="row-title">Select Launch/Expire Dates</ion-label>
+          <ion-label class="row-title row-sub-title">Please note that countdowns must have 3 month minimum. </ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col no-padding>
+          <ion-label color="font-color" class="date-title" stacked>Launch Date</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row class="dateTime">
+        <ion-col col-8>
+          <ion-datetime type="text" displayFormat="MMMM DD, YYYY" pickerFormat="MMMM DD, YYYY" min="{{min}}" max="{{max}}" placeholder="Date"
+            formControlName="lunchDate"></ion-datetime>
+        </ion-col>
+        <ion-col col-4>
+          <ion-datetime type="text" displayFormat="hh:mm a" pickerFormat="hh:mm a" placeholder="Time" formControlName="lunchTime" text-center></ion-datetime>
+        </ion-col>
+      </ion-row>
+      <hr class="divide-line" />
+      <ion-row>
+        <ion-col no-padding>
+          <ion-label color="font-color" class="date-title" stacked>Expiration Date</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row class="dateTime">
+        <ion-col col-8>
+          <ion-datetime type="text" displayFormat="MMMM DD, YYYY" pickerFormat="MMMM DD, YYYY" min="{{min}}" max="{{max}}" placeholder="Date"
+            formControlName="expDate"></ion-datetime>
+        </ion-col>
+        <ion-col col-4>
+          <ion-datetime type="text" displayFormat="hh:mm a" pickerFormat="hh:mm a" placeholder="Time" formControlName="expTime" text-center></ion-datetime>
+        </ion-col>
+      </ion-row>
+      <ion-row class="gray-div">
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <ion-label class="row-title">Make this Qupey available to</ion-label>
+        </ion-col>
+      </ion-row>
+      <hr class="divide-line" />
+      <ion-item *ngFor="let types of followers;let indx = index">
+        <hr class="divide-line" />
+        <ion-label class="toggle-title">{{types.type}}</ion-label>
+        <ion-toggle (ionChange)="toggleDiscountClick($event,types,'followers',followers)" [checked]="types.status" [(ngModel)]="types.status"
+          [ngModelOptions]="{standalone: true}"></ion-toggle>
+      </ion-item>
+
+      <ion-list *ngIf="selectedFollowers.length>0 && qupeyForm.get('followers').value== 'List Only'">
+        <hr class="toggle-divide-line" />
+        <ion-item class="follower-item" *ngFor="let followers of selectedFollowers">
+          <ion-avatar item-start>
+            <img *ngIf="followers.logo!=null" src="{{followers.logo}}" />
+            <img *ngIf="followers.logo==null" src="assets/business-logo/user-default.png" />
+          </ion-avatar>
+          <h2 class="uname">{{followers.name}}</h2>
+          <img src="assets/follower_close/shape13.png" class="add-follower-icon" item-end (click)="removeFollower(followers)" />
+        </ion-item>
+      </ion-list>
+      <hr class="toggle-divide-line" />
+      <ion-row *ngIf="qupeyForm.get('followers').value== 'List Only'" (click)="openFollowersList()">
+        <ion-col col-8>
+          <ion-label class="add-user">Add User(s)</ion-label>
+        </ion-col>
+        <ion-col col-4>
+          <img src="assets/follower_plus/shape14.png" class="add-follower-icon" item-end/>
+        </ion-col>
+      </ion-row>
+      <ion-row class="gray-div">
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <ion-label class="row-title">Redemption Code/Password</ion-label>
+          <ion-label class="row-title row-sub-title">Add a six digit code/password that will redeem your Qupey when its presented to cashier.</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <input [textMask]="{mask: mask}" text-center class="text-box rdm-text" type="text" formControlName="code" placeholder="Redeem Code"
+          />
+        </ion-col>
+        <!-- <ion-col text-center col-4>
+          <input type="text" id="digit1" (keypress)="autoTab($event,'digit2')" class="text-box code left" formControlName="fDigit" maxlength=1 minlength=1 text-center/>
+          <input type="text" id="digit2"  (keypress)="autoTab($event,'digit3')" class="text-box code right" formControlName="sDigit" maxlength=1 minlength=1 text-center />
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <input type="text" id="digit3" class="text-box code left" formControlName="tDigit" maxlength=1 minlength=1 text-center />
+          <input type="text" id="digit4" class="text-box code right" formControlName="foDigit" maxlength=1 minlength=1 text-center
+          />
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <input type="text" id="digit5" class="text-box code left" formControlName="fiDigit" maxlength=1 minlength=1 text-center />
+          <input type="text" id="digit6" class="text-box code right" formControlName="siDigit" maxlength=1 minlength=1 text-center
+          />
+        </ion-col> -->
+      </ion-row>
+      <ion-row class="gray-div">
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <ion-label class="row-title">Add Terms & Conditions</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <textarea class="text-box" type="text" formControlName="term_con" placeholder="Terms & Conditions"></textarea>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-3>
+        </ion-col>
+        <ion-col col-6>
+          <button type="button" [hidden]="!isEdit" ion-button class="create-btn" color="theme-blue-button" block (click)="createCoupon(qupeyForm.value,qupeyForm.valid)">Save </button>
+          <button type="button" [hidden]="isEdit" ion-button class="create-btn" color="theme-blue-button" block (click)="createCoupon(qupeyForm.value,qupeyForm.valid)">Create </button>
+        </ion-col>
+        <ion-col col-3>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+
+</ion-content>

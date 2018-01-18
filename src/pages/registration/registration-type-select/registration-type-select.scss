@@ -1,0 +1,32 @@
+page-registration-type-select {
+
+.icon{
+    position: absolute;
+    // top: 170px;
+    left: 38%;
+    margin-top: 120px;
+}
+
+.registerbtn{
+  margin-top: 78%;
+}
+.font-cls{
+    font-size:20px;
+    font-family: HelveticaNeue-Roman;
+    text-transform: unset;
+}
+
+.btn-register{
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+}
+ .login-text{
+        color: color($colors,font-color);
+        font-size: 15px;
+        text-align: center;
+        margin-top:0px;
+       // padding-left:40px;
+    }
+
+}

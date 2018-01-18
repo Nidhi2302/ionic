@@ -1,0 +1,82 @@
+page-phone-number {
+
+.iconStyle{
+    margin: 5% auto;
+    width: 90px;
+    }
+    .btn-next{
+         color: color($colors,font-color);
+    float: right;
+    margin: 0px;
+    padding: 0px;
+    }
+    .clear{
+        clear:both
+    }
+    .btn-previous{
+ color: color($colors,font-color);
+      float: left;
+    margin: 0px;
+    padding: 0px;
+    }
+    form{
+       //margin-top: 55%;
+        .item-inner{
+            border:none !important;
+            padding: 0px !important;
+        }
+        .item-block:first-child {
+              border:none !important;
+        }
+        input{
+    border: 1px solid color($colors,font-color);
+    padding-left: 12px;
+    border-radius: 3px;
+    color: color($colors,font-color);
+    font-size:20px;
+    font-family: HelveticaNeue-Roman;
+    padding: 11px 8px 11px 8px;
+    width: calc(100% - 8px);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+        }
+        ion-item{
+            margin-top: 10px !important;
+            margin-bottom: 10px !important;
+        }
+        .item-ios{
+            padding: 0px;
+        }
+        .item-md{
+            padding: 0px;
+        }
+       
+        
+           ion-label {
+            font-size: 16px !important;
+        }
+          
+       
+    }
+    .last-btn{
+        
+          width: 100%;
+          position: relative;
+          top: 358px;
+      }
+      @media only screen and (max-height:600px){
+        .last-btn{
+            top:270px;
+        }
+    }
+}
+.ios{
+    page-phone-number {
+        .last-btn2{
+            width: 100%;
+            position: relative;
+            top: 342px;
+        }
+    }
+}

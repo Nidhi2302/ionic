@@ -1,0 +1,42 @@
+<ion-content padding>
+    <ion-card class="profile-card-wrapper" no-margin>
+        <ion-item no-padding class="profile-page-item">
+            <ion-avatar text-center>
+                <img src="{{loggedinUser.logo}}" *ngIf="loggedinUser.logo!=null">
+                <img src="assets/business-logo/user-default.png" *ngIf="loggedinUser.logo==null">
+            </ion-avatar>
+            <h2 class="user-name" text-center>{{loggedinUser.name}}
+                <!-- <ion-icon name="checkmark-circle"></ion-icon> -->
+            </h2>
+            <h3 class="user-id" text-center>@{{loggedinUser.username}}</h3>
+            <p class="user-des" text-center>{{loggedinUser.user_basic_information}}</p>
+            <h2 class="text-following" text-center><strong>{{followerCount}} </strong>FOLLOWING</h2>
+        </ion-item>
+        <ion-grid class="border-bottom" >
+            <ion-row >
+                <ion-col col-4>
+                    <div class="sub-total-followers">{{savedCouponCount}}</div>
+                    <div class="sub-total-text">Qupeys</div>
+                </ion-col>
+                <ion-col col-4>
+                    <div class="sub-total-followers">{{redeemCount}}</div>
+                    <div class="sub-total-text">Redemptions</div>
+                </ion-col>
+                <ion-col col-4>
+                    <div class="sub-total-followers">{{points}}</div>
+                    <div class="sub-total-text">Points</div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+    <ion-list no-padding class="res-name-wrapper">
+        <ion-item class="list-item">
+            <button *ngFor="let i of pages" class="rest-name-btn" ion-item (click)="setPages(i.page)">{{i.name}}</button>
+        </ion-item>
+        <ion-item class="list-item rest-logout-btn" (click)="setPages('Logout')">
+            Logout
+        </ion-item>
+    </ion-list>
+   
+   
+</ion-content>

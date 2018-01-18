@@ -1,0 +1,99 @@
+page-followers {
+   .business-logo-follow{
+    top: 30px;
+
+    }
+    .logo-img-follow{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #3667b1;
+    }
+    ion-avatar img{
+      object-fit: cover;
+    }
+    ion-item.item-block{
+      border-bottom: 1px solid rgba(149,152,154,0.2);
+      padding: 0px;
+    }
+    .back-arrow{
+      top: 80px;
+      left: 7%;
+      color: rgb(177,179,181);
+      font-size: 3em;
+      z-index: 1;
+    }
+    .business-name{
+      color: #6692cd;
+      margin-top:17px;
+        margin-bottom: 0px;
+        font-family: HelveticaNeue-Roman !important;
+    }
+    .row-title{
+        color: color($colors,theme-blue-button);
+        font-size: 20px;
+        font-family: HelveticaNeue-Roman !important;
+        white-space: initial;
+        margin:0;
+    }
+    .followers .title{
+       //border-top: 0.55px solid #c8c7cc;
+    }
+    .search-toolbar{
+     padding-top: 0px;
+    }
+    .scroll-content{
+      margin-top: 249px !important;
+      padding-top: 0px !important;
+    }
+    .followers_title .toolbar-title{
+      color: color($colors,theme-blue-button);
+      font-family: HelveticaNeue-Bold !important;
+      margin-top: 0px;
+      padding-bottom: 3px;
+      font-weight: bold;
+    }
+    .toolbar .searchbar .searchbar-input {
+      background: transparent;
+      border: 1px solid #ccc;
+    }
+    .uname{
+        font-family: HelveticaNeue-Roman !important;
+        font-size: 18px;
+        color: rgb(14,109,178);
+    }
+   .list-ios > .item-block:first-child {
+      border-top: none;
+   }
+   .list-md > .item-block:first-child {
+    border-top: none;
+ }
+ .toolbar-background-md{
+  background: #f8f8f8 !important;
+}
+   .listofusers {
+    margin: -1px 0 5px;
+  }
+  .no-record{
+    border: none !important;
+    color: color($colors,font-color);
+  }
+  .no-record-label{
+    white-space: initial;
+  }
+  .toolbar-background-ios{
+    background: transparent;
+  }
+  .toolbar-background-md{
+    background: transparent;
+  }
+  .header-ios .toolbar-background, .footer .toolbar-background {
+    border-style: solid;
+    border-color: transparent;
+  }
+  .header-md .toolbar-background, .footer .toolbar-background {
+    border-style: solid;
+    border-color: transparent;
+  }
+}

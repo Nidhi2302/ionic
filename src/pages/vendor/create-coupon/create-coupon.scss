@@ -1,0 +1,209 @@
+page-create-coupon {
+    .business-background{
+        height: 200px;
+        width: 1245px;
+        position: relative;
+        object-fit: cover;
+      }
+    .business-logo{
+        position: absolute;
+        top: -60px !important;
+        left:0px !important;
+       
+    }
+    ion-item{
+        // border-top: 1px solid rgba(149,152,154,0.2) !important;
+        // border-bottom: 1px solid rgba(149,152,154,0.2) !important;
+    }
+    .follower-item{
+        border: none !important;
+    }
+    .scroll-content{
+        margin-top:310px !important;
+    }
+    .logo-img{
+        width: 120px;
+        border-radius: 50%;
+        height: 120px;
+        object-fit: cover;
+    }
+    .rdm-text{
+        height: 55px;
+        letter-spacing: 10px;
+    }
+    .back-arrow{
+        //position: absolute;
+        top: 68%;
+        left: 7%;
+        color: rgb(177,179,181);
+        font-size: 3em;
+        z-index: 1;
+    }
+    .business-name{
+        color:#6692cd;
+        // margin-top:15%;
+        margin-bottom: 0px;
+        font-family: HelveticaNeue-Roman !important;
+    }
+    .row-title{
+        color: color($colors,theme-blue-button);
+        font-size: 20px;
+        font-family: HelveticaNeue-Roman !important;
+        white-space: initial;
+        
+    }
+    .row-sub-title{
+        font-size: 15px;
+       width: 99%;
+    }
+    .toggle-title{
+        color: color($colors,font-color);
+        font-size: 20px;
+        white-space: initial;
+        margin:0;
+        margin-left:5%; 
+        font-family: HelveticaNeue-Roman !important;
+    }
+    
+    .text-box{
+        border: 1px solid rgba(175,177,179,1);
+        border-radius: 5px;
+        font-size:18px;
+        padding-left:2%;
+        margin-left: 5%;
+        width: 90%;
+        color:color($colors,font-color);
+        font-family: HelveticaNeue-Roman !important;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    .am{
+        height: 45px;
+    }
+    textarea{
+        height: 100px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    .qupey-text{
+        height: 55px;
+    }
+    .text-box-red{
+        border: 1px solid #f00;
+        border-radius: 5px;
+        font-size:18px;
+        padding-left:2%;
+        margin-left: 5%;
+        width: 90%;
+        color:color($colors,font-color);
+        font-family: HelveticaNeue-Roman !important;
+    }
+    .item-block .item-inner{
+        border:none;
+        border-top: 1px solid rgba(149,152,154,0.2);
+        border-bottom: 1px solid rgba(149,152,154,0.2);
+    }
+    .add-follower-icon{
+       width:30px;
+       height: 30px;
+       margin: 0;
+       margin-left: 68%;
+       margin-top:2%;
+    }
+    .code{
+        width: 48%;
+        margin:0px;
+        height: 55px;
+    }
+    .left{
+        float:left;
+    }
+    .right{
+        float:right;
+    }
+    .gray-div{
+        width:100%;
+        height:20px;
+        background-color: rgb(228,228,228);
+        margin-top:5%;
+    }
+   .create-btn{
+        font-family: HelveticaNeue-Bold !important;
+   }
+  .toggle-ios.toggle-checked .toggle-icon{
+      background-color:color($colors,secondary) !important;
+  }
+  .toggle-md.toggle-checked .toggle-icon{
+    background-color:color($colors,secondary) !important;
+}
+.toggle-md.toggle-checked .toggle-inner{
+    background-color:#fff !important;
+}
+
+  ion-list{
+      margin:0px !important;
+  }
+  .dateTime{
+        border: 1px solid rgb(175,177,179);
+        border-radius: 5px;
+        font-size:18px;
+        margin-left: 5%;
+        width: 90%;
+        font-family: HelveticaNeue-Roman !important;
+         color: color($colors,font-color);
+  }
+       
+    .date-title{
+         font-size:18px !important;
+         margin:0 !important;
+        padding-left: 5% !important;
+        font-family: HelveticaNeue-Roman !important;
+    }
+    .divide-line{
+        background-color: rgba(149,152,154,0.2);
+        height: 1px;
+        width: 92%;
+        margin-top: 4%;
+    }
+    .toggle-divide-line{
+        background-color: rgba(149,152,154,0.2);
+        height: 1px;
+        width: 92%;
+        //margin-top: 4%;
+    }
+    ion-avatar{
+        margin: 8px 10px 8px 15px !important;
+    }
+    ion-avatar img{
+        object-fit: cover;
+      }
+    .uname{
+        color:rgb(14,109,178);
+        font-size: 20px;
+        font-family: HelveticaNeue-Roman !important;
+        white-space: initial;
+        margin:0px;
+    }
+    .add-user{
+        color: rgb(14,109,178);
+        font-size: 20px;
+        font-family: HelveticaNeue-Roman !important;
+        white-space: initial;
+        margin:0px;
+        margin-left:10%; 
+    }
+    ion-datetime{
+        padding: 2% !important;
+    }
+    .overlay {
+    background: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 53%;
+    height: 1300px;
+}
+}

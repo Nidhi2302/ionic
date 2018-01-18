@@ -1,0 +1,79 @@
+page-statistics {
+  .scroll-content{
+    margin-top: 201px !important;
+  }
+   .business-logo-followers{
+    top: 30px;
+
+    }
+   .logo-img-followers{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3667b1;
+    }
+
+    .back-arrow-followers{
+        top: 80px;
+        left: 7%;
+        color: rgb(177,179,181);
+        font-size: 3em;
+        z-index: 1;
+    }
+    .logout{
+        position: absolute;
+        bottom:0;
+        margin-top:15%;
+    }
+    .business-name-followers{
+        color: #6692cd;
+        margin-top:17px;
+          margin-bottom: 0px;
+          font-family: HelveticaNeue-Roman !important;
+    }
+    .row-title{
+        color: color($colors,theme-blue-button);
+        font-size: 20px;
+        font-family: HelveticaNeue-Roman !important;
+        white-space: initial;
+        margin:0;
+    }
+     .followers-followers{
+       border-bottom: 0.55px solid #c8c7cc;
+       
+    }
+    .followers_title-followers .toolbar-title{
+        color: color($colors,theme-blue-button);
+        font-family: HelveticaNeue-Bold !important;
+        margin-top: 0px;
+        padding-bottom: 3px;
+        font-weight: bold;
+    }
+    .row-content{
+        color: color($colors,font-color);
+        font-family: HelveticaNeue-Roman !important;
+        white-space: initial;
+        margin:0;
+    }
+    .row-content-num{
+      color: color($colors,font-color);
+        font-family: HelveticaNeue-Roman !important;
+        white-space: initial;
+        margin:0;
+        font-size: 36px;
+        font-weight: bold;
+    }
+    .item-inner,  .item-inner {
+        padding-right: 0px !important;
+        border-bottom: 0.55px solid #c8c7cc;
+    }
+    .label-ios {
+      font-size: 16px;
+       color: color($colors,font-color);
+    }
+    .label-md {
+        font-size: 16px;
+         color: color($colors,font-color);
+      }
+}

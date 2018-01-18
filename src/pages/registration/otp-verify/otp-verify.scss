@@ -1,0 +1,86 @@
+page-otp-verify {
+
+.iconStyle{
+    margin: 5% auto;
+    width: 90px;
+    }
+    .btn-next{
+         color: color($colors,font-color);
+    float: right;
+    margin: 0px;
+    padding: 0px;
+    }
+    .btn-previous{
+ color: color($colors,font-color);
+      float: left;
+    margin: 0px;
+    padding: 0px;
+    }
+    form{
+       // margin-top:55%;
+        
+        input{
+    border: 1px solid color($colors,font-color);
+    border-radius: 3px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    color: color($colors,font-color);
+    font-size:20px;
+    font-family: HelveticaNeue-Roman;
+     -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 100%;
+        height : 70px;
+            }
+        ion-col{
+            margin:2px !important;
+           
+        }
+        ion-row{
+            margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+        ion-label{
+             cursor: pointer;
+        }
+        }
+        ion-item{
+            margin-top: 10px !important;
+            margin-bottom: 10px !important;
+        }
+        .item-ios{
+            padding: 0px;
+        }
+        .item-md{
+            padding: 0px;
+        }
+        ion-label {
+            font-size: 20px !important;
+            white-space: initial;
+        }
+            
+        
+       
+    }
+    .last-btn{
+        
+          width: 100%;
+          position: relative;
+          top: 198px;
+      }
+      @media only screen and (max-height:600px){
+        .last-btn{
+            top:105px;
+        }
+    }
+}
+.ios{
+    page-otp-verify {
+        .last-btn2{
+            width: 100%;
+            position: relative;
+            top: 182px;
+        }
+    }
+}

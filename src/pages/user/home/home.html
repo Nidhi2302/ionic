@@ -1,0 +1,73 @@
+<ion-header class="custom-header">
+
+  <ion-navbar hideBackButton no-padding>
+    <ion-title class="title-header" text-center>Discover</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-bounce no-padding class="has-header">
+  <ion-row *ngIf="vendorList.length==0 && isLocationAvl">
+    <ion-col text-center>
+      <ion-label class="location-err">
+        Sorry There are no vendor near you,Please change your location and try again.
+      </ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-list *ngIf="vendorList.length!=0 && isLocationAvl" no-margin>
+    <ion-card [class]="getClass(vendor)" *ngFor="let vendor of vendorList">
+      <div class="overlay-image">
+        <img src="assets/business-image/VendorDefault.jpg" *ngIf="vendor.banner_url==null" class="backgroung-img" />
+        <img src="{{vendor.banner_url}}" *ngIf="vendor.banner_url!=null" class="backgroung-img" />
+        <div class="after" (click)="expCard(vendor)"></div>
+      </div>
+      <ion-row class="title-row">
+        <ion-col col-2 no-padding>
+          <img src="assets/business-logo/user-default.png" *ngIf="vendor.logo_url==null" class="logo" (click)="expCard(vendor)"/>
+          <img src="{{vendor.logo_url}}" *ngIf="vendor.logo_url!=null" class="logo" (click)="expCard(vendor)"/>
+        </ion-col>
+        <ion-col col-7>
+          <ion-label class="card-title" (click)="expCard(vendor)">
+            {{vendor.vendorname}}
+          </ion-label>
+          <ion-label class="card-subtitle" (click)="expCard(vendor)">
+            {{vendor.address1}}
+          </ion-label>
+          <ion-label class="card-subsubtitle" (click)="expCard(vendor)">
+            {{vendor.address2}}
+          </ion-label>
+        </ion-col>
+        <ion-col col-3 text-right>
+          <ion-icon name="heart" class="heart-icon" (click)="setFav(vendor)" *ngIf="!vendor.like"></ion-icon>
+          <ion-icon name="heart" class="heart-like-icon" (click)="setFav(vendor)" *ngIf="vendor.like"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="bottom-row">
+        <ion-col text-left>
+          <ion-label class="qupey-text" *ngIf="!vendor.isExpandable">
+            {{vendor.couponcount}} Qupeys Available
+          </ion-label>
+        </ion-col>
+        <ion-col text-right>
+          <ion-label class="loca-text" *ngIf="!vendor.isExpandable">
+            {{vendor.distance.calculated | number: '1.1-1'}} miles
+          </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfiniteExpiry($event)" *ngIf="isLocationAvl">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <ion-row *ngIf="!isLocationAvl">
+    <ion-col text-center>
+      <ion-label class="location-err">
+        GPS setting seems to be off. Please on GPS or change your location and try again.
+      </ion-label>
+    </ion-col>
+  </ion-row>
+</ion-content>

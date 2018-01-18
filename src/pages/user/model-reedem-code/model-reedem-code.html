@@ -1,0 +1,70 @@
+
+<ion-header>
+</ion-header>
+
+<ion-content [ngClass]="{'coupon':this.coupon.qupey_type != 'Advance Purchase Required','coupon-blue':this.coupon.qupey_type == 'Advance Purchase Required'}" >
+ <ion-grid [ngClass]="{'coupon':this.coupon.qupey_type != 'Advance Purchase Required','coupon-blue':this.coupon.qupey_type == 'Advance Purchase Required'}" no-padding>
+   <ion-row>
+      <ion-col no-padding text-right>
+          <ion-icon [ngClass]="{'close-btn':this.coupon.qupey_type != 'Advance Purchase Required','close-btn-blue':this.coupon.qupey_type == 'Advance Purchase Required'}" (click)="dismiss()" name="close"></ion-icon>
+          <img [ngClass]="{'logo-coupon-img':this.coupon.qupey_type != 'Advance Purchase Required','logo-coupon-img-blue':this.coupon.qupey_type == 'Advance Purchase Required'}" *ngIf="coupon.logo_url==null" src="assets/business-logo/user-default.png" />
+          <img src="{{coupon.logo_url}}" *ngIf="coupon.logo_url!=null"[ngClass]="{'logo-coupon-img':this.coupon.qupey_type != 'Advance Purchase Required','logo-coupon-img-blue':this.coupon.qupey_type == 'Advance Purchase Required'}" />
+        </ion-col>
+   </ion-row>
+   <ion-row>
+    <ion-col text-center no-padding>
+      <ion-label [ngClass]="{'business-black-name':this.coupon.qupey_type != 'Advance Purchase Required','business-black-name-blue':this.coupon.qupey_type == 'Advance Purchase Required'}">{{coupon.vendorname}}</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col text-center no-padding>
+      <ion-label [ngClass]="{'subtitle1':this.coupon.qupey_type != 'Advance Purchase Required','subtitle1-blue':this.coupon.qupey_type == 'Advance Purchase Required'}">{{coupon.address1}}</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col text-center no-padding>
+      <ion-label [ngClass]="{'subtitle2':this.coupon.qupey_type != 'Advance Purchase Required','subtitle2-blue':this.coupon.qupey_type == 'Advance Purchase Required'}">{{coupon.address2}}</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col text-center no-padding>
+      <ion-label [ngClass]="{'discount-text':this.coupon.qupey_type != 'Advance Purchase Required','discount-text-blue':this.coupon.qupey_type == 'Advance Purchase Required'}" *ngIf="this.coupon.discount_type != 'Dollar Amount' && this.coupon.discount_type != 'Other'">{{coupon.qupey_type}}</ion-label>
+      <ion-label [ngClass]="{'discount-text':this.coupon.qupey_type != 'Advance Purchase Required','discount-text-blue':this.coupon.qupey_type == 'Advance Purchase Required'}" *ngIf="this.coupon.discount_type == 'Dollar Amount'">{{coupon.coupon_name}}</ion-label>
+      <ion-label [ngClass]="{'discount-text':this.coupon.qupey_type != 'Advance Purchase Required','discount-text-blue':this.coupon.qupey_type == 'Advance Purchase Required'}" *ngIf="this.coupon.discount_type == 'Other'">{{coupon.coupon_name}}</ion-label>
+    </ion-col>
+  </ion-row>
+    
+    <ion-row>
+      <ion-col text-center no-padding>
+        <ion-label [ngClass]="{'discount-des':this.coupon.qupey_type != 'Advance Purchase Required','discount-des-blue':this.coupon.qupey_type == 'Advance Purchase Required'}" >{{coupon.discription}}</ion-label>
+      </ion-col>
+    </ion-row>
+    
+    
+    <ion-row>
+      <ion-col>
+          <input [textMask]="{mask: mask}" [(ngModel)]="redeemCode" text-center class="text-box rdm-text" type="text" placeholder="Redeem Code" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center no-padding>
+        <button type="button" ion-button class="discount-btn" color="danger" (click)="redeemCoupon()">redeem!</button>
+      </ion-col>
+    </ion-row>
+    
+    
+    <ion-row>
+      <ion-col col-6 no-padding text-left>
+        <ion-label [ngClass]="{'expiry-text':this.coupon.qupey_type != 'Advance Purchase Required','expiry-text-blue':this.coupon.qupey_type == 'Advance Purchase Required'}" >Expires {{coupon.expiration_date | todate}}</ion-label>
+      </ion-col>
+      <ion-col col-6 no-padding text-right>
+        <ion-label [ngClass]="{'trm-text':this.coupon.qupey_type != 'Advance Purchase Required','trm-text-blue':this.coupon.qupey_type == 'Advance Purchase Required'}"  (click)="showChange()">Terms & Conditions</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row [hidden]=isTerm>
+        <ion-col text-center no-padding>
+          <ion-label [ngClass]="{'trm-des':this.coupon.qupey_type != 'Advance Purchase Required','trm-des-blue':this.coupon.qupey_type == 'Advance Purchase Required'}" >{{coupon.terms_condition}}</ion-label>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>

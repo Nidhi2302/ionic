@@ -1,0 +1,337 @@
+page-coupon-review {
+    .scroll-content{
+     margin-top: 212px !important;
+    //padding-top: 0px !important;
+    }
+    .business-logo-inventory{
+        top: 30px;
+        //left: 5px;
+
+    }
+   .logo-img-inventory{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3667b1;
+    }
+
+    .back-arrow-inventory{
+        top: 80px;
+        left: 5%;
+        color: rgb(177,179,181);
+        font-size: 3em;
+        z-index: 1;
+    }
+    .business-main-black-name{
+        color: color($colors,theme-blue-button);
+      margin-top:25px !important;
+        margin-bottom: 0px;
+        font-family: HelveticaNeue-Roman !important;
+    }
+    
+ .logo-img{
+    width: 100px;
+    border-radius: 50%;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #3667b1;
+    }
+
+    .followers-inventory{
+        // border-bottom: 0.55px solid #c8c7cc;
+     }
+     .followers_title-inventory .toolbar-title{
+       color: color($colors,theme-blue-button);
+       font-family: HelveticaNeue-Bold !important;
+       margin-top: 0px;
+       font-weight: bold;
+     }
+    .business-name{
+        color: color($colors,font-color);
+        margin-top:17px;
+        font-size:20px;
+        margin-bottom: 0px;
+        font-family: HelveticaNeue-Roman !important;
+    }
+     .edit-btn{
+        font-family: HelveticaNeue-Bold !important;
+        border-radius: 5px;
+        font-size: 18px;
+        height: 35px;
+        float: left;
+        width: 70%;
+   }
+     .publish-btn{
+        font-family: HelveticaNeue-Bold !important;
+        border-radius: 5px;
+        font-size: 18px;
+        height: 35px;
+        //float: right;
+        //width: 70%;
+   }
+    .preview-text{
+         color: color($colors,theme-blue-button);
+         font-size: 20px;
+        font-family: HelveticaNeue-Bold !important;
+        margin:0 !important;
+    }
+    hr{
+        margin-top: 2%;
+        margin-bottom: 4%;
+        width: 100%;
+        //margin-left: 4%;
+        height: 1px !important;
+        background-color:rgba(149,152,154,0.2) !important;
+        }
+    .help-text{
+        color: color($colors,font-color);
+       // margin-top:45%;
+        font-size:18px;
+        white-space: initial;
+        font-family: HelveticaNeue-Roman !important;
+    }
+    .coupon{
+         border: 1px solid rgba(175,177,179,1);
+        border-radius: 5px;
+       // height: 550px;
+    }
+    .close-btn{
+        float: right;
+        font-size: 3.3em;
+        margin-right: 4%;
+        color:color($colors,font-color);
+    }
+    .logo-coupon-img{
+          width: 80px;
+          height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #3667b1;
+    }
+    
+    .business-black-name{
+        color: color($colors,theme-blue-button);
+        margin-top:0px;
+        font-size:22px;
+        margin-bottom: 0px;
+        margin-right: 0px;
+        font-family: HelveticaNeue-Bold !important;
+    }
+    .subtitle1{
+         color: color($colors,font-color);
+        font-size:16px;
+        white-space: initial;
+        margin: 0px;
+        font-family: HelveticaNeue-Roman !important;
+    }
+    .subtitle2{
+         color: color($colors,font-color);
+        font-size:14px;
+        margin: 0px;
+        white-space: initial;
+        font-family: HelveticaNeue-Roman !important;
+    }
+    .discount-text{
+        color: color($colors,font-color);
+        font-size:40px;
+        white-space: initial;
+        margin:11px;
+        margin-bottom: 0px;
+        font-family: HelveticaNeue-Bold !important;
+    }
+     .discount-des{
+        color: color($colors,font-color);
+        font-size:20px;
+        margin-left: 3%;
+        margin-top: 0px;
+        white-space: initial;
+        font-family: HelveticaNeue-Roman !important;
+    }
+    .discount-btn{
+         font-family: HelveticaNeue-Bold !important;
+        border-radius: 5px;
+        font-size: 18px;
+        height: 35px;
+        text-transform: uppercase;
+    }
+    .inside-coupon-hr{
+        margin-top: 3%;
+        margin-bottom: 2%;
+        margin-left: 4%;
+        width: 92%;
+        height: 1px !important;
+        background-color:rgb( 175,177,179) !important;
+    }
+    .save-text{
+        font-family: HelveticaNeue-Roman !important;
+        font-size:20px;
+         color: color($colors,font-color);
+        float: left;
+        margin:0px;
+        margin-left:10%;
+    }
+    .count-text{
+        font-family: HelveticaNeue-Roman !important;
+        font-size:18px;
+         color: color($colors,font-color);
+        float: left;
+        margin:0px;
+        margin-left:10%;
+    }
+    .share-text{
+         font-family: HelveticaNeue-Roman !important;
+        font-size:20px;
+         color: color($colors,font-color);
+        float: right;
+         margin:0px;
+        margin-right:10%;
+    }
+    .expiry-text{
+        font-family: HelveticaNeue-Roman !important;
+        font-size:10px;
+         color: color($colors,font-color);
+        float: left;
+        margin:0px;
+        margin-left:10%;
+        margin-bottom:8%;
+    }
+    .trm-text{
+         font-family: HelveticaNeue-Roman !important;
+        font-size:10px;
+         color: color($colors,font-color);
+        float: right;
+         margin:0px;
+        margin-right:10%;
+        margin-bottom:8%;
+    }
+    .box-blue{
+        background-color: rgb(194,211,235);
+        border: 1px solid rgb(213,214,215);
+        height: 65px;
+        margin-left:1%;
+        margin-right:1%;
+        width: 90%;
+        //background: url('../../assets/CouponClose/close.png') top left no-repeat !important;
+    }
+     .box{
+        //background-color: rgb(194,211,235);
+        border: 1px solid rgb(213,214,215);
+        height: 65px;
+        width: 90%;
+        margin-left:1%;
+        margin-right:1%;
+    }
+    .box-row{
+         margin:2%;
+
+    }
+    //blue
+    .coupon-blue{
+        background: color($colors,theme-dark-blue-button);
+        //border: 1px solid rgba(175,177,179,1);
+        border-radius: 5px;
+    }
+    .close-btn-blue{
+        float: right;
+        font-size: 3.3em;
+        margin-right: 4%;
+        color:rgb(226,223,223);
+    }
+    .logo-coupon-img-blue{
+        width: 80px;
+        height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #6692cd;
+ 
+    }
+    .business-black-name-blue{
+        color: rgb(226,223,223);
+        margin-top:0px;
+        font-size:22px;
+        margin-bottom: 0px;
+        margin-right: 0px;
+        font-family: HelveticaNeue-Bold !important;
+    }
+    .subtitle1-blue{
+        color: rgb(226,223,223);
+       font-size:16px;
+       white-space: initial;
+       margin: 0px;
+       font-family: HelveticaNeue-Roman !important;
+   }
+   .subtitle2-blue{
+        color: rgb(226,223,223);
+       font-size:14px;
+       margin: 0px;
+       white-space: initial;
+       font-family: HelveticaNeue-Roman !important;
+   }
+   .discount-text-blue{
+       color: rgb(226,223,223);
+       font-size:40px;
+       white-space: initial;
+       margin:11px;
+       margin-bottom: 0px;
+       font-family: HelveticaNeue-Bold !important;
+   }
+    .discount-des-blue{
+       color: rgb(226,223,223);
+       font-size:20px;
+       margin-left: 3%;
+       margin-top: 0px;
+       white-space: initial;
+       font-family: HelveticaNeue-Roman !important;
+   }
+   .inside-coupon-hr-blue{
+    margin-top: 3%;
+    margin-bottom: 2%;
+    margin-left: 4%;
+    width: 92%;
+    height: 1px !important;
+    background-color:rgb(226,223,223) !important;
+}
+.save-text-blue{
+    font-family: HelveticaNeue-Roman !important;
+    font-size:20px;
+     color: rgb(226,223,223);
+    float: left;
+    margin:0px;
+    margin-left:10%;
+}
+.count-text-blue{
+    font-family: HelveticaNeue-Roman !important;
+    font-size:18px;
+     color: rgb(226,223,223);
+    float: left;
+    margin:0px;
+    margin-left:10%;
+}
+.share-text-blue{
+     font-family: HelveticaNeue-Roman !important;
+    font-size:20px;
+     color: rgb(226,223,223);
+    float: right;
+     margin:0px;
+    margin-right:10%;
+}
+.expiry-text-blue{
+    font-family: HelveticaNeue-Roman !important;
+    font-size:10px;
+     color: rgb(226,223,223);
+    float: left;
+    margin:0px;
+    margin-left:10%;
+    margin-bottom:8%;
+}
+.trm-text-blue{
+     font-family: HelveticaNeue-Roman !important;
+    font-size:10px;
+     color: rgb(226,223,223);
+    float: right;
+     margin:0px;
+    margin-right:10%;
+    margin-bottom:8%;
+}
+}

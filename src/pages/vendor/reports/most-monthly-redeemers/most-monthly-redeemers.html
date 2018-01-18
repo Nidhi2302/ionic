@@ -1,0 +1,61 @@
+<ion-header>
+
+  <ion-row>
+    <ion-col col-4 class="back-arrow-followers">
+      <ion-icon name="arrow-back" (click)="menuclick()"></ion-icon>
+    </ion-col>
+    <ion-col col-4 class="business-logo-followers" text-center>
+        <img class="logo-img-followers" src="{{loggedinUser.logo}}" *ngIf="loggedinUser.logo!=null" />
+        <img class="logo-img-followers" *ngIf="loggedinUser.logo==null"  src="assets/business-logo/user-default.png" />
+         
+    </ion-col>
+    <ion-col col-4 class="back-arrow-followers"></ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col text-center>
+      <h3 class="business-name-followers">{{this.loggedinUser.name}}</h3>
+    </ion-col>
+  </ion-row>
+  <ion-row >
+    <ion-col text-center>
+      <ion-title class="followers_title-followers">Most Redeemed Qupeys (Monthly)</ion-title>
+    </ion-col>
+  </ion-row>
+  <ion-grid>
+      <ion-row class="followers-followers">
+        <ion-col class="col dateTime">
+          <ion-datetime displayFormat="YYYY" min="{{min}}" max="{{max}}" placeholder="Year" [(ngModel)]="year" (ionChange)="getMonthwise()"></ion-datetime>
+        </ion-col>
+  <ion-col class="col dateTime no-margin">
+          <ion-datetime displayFormat="M" placeholder="Month" [(ngModel)]="month" (ionChange)="getMonthwise()"></ion-datetime>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-header>
+
+
+<ion-content padding>
+  
+
+
+  <ion-list>
+    <ion-item [ngClass]="{'coupondetail':coupon.qupey_type!='Advance Purchase Required','coupondetail-darkblue':coupon.qupey_type=='Advance Purchase Required'}" *ngFor="let coupon of mostReedeemer">
+      <ion-row class="couponrow">
+        <ion-col col-4>
+          <img [ngClass]="{'logo-img-coupon':coupon.qupey_type!='Advance Purchase Required','logo-img-coupon-blue':coupon.qupey_type=='Advance Purchase Required'}"  src="{{businessLogo}}" />
+          <p class="expires">Expires {{coupon.expiration_date}}</p>
+        </ion-col>
+        <ion-col col-8>
+            <p class="coupon-title" *ngIf="coupon.qupey_type != 'No Fee' && coupon.qupey_type != 'Advance Purchase Required' && coupon.qupey_type != 'Other'">{{coupon.qupey_type}}</p>
+            <p class="coupon-title" *ngIf="coupon.qupey_type == 'No Fee' || coupon.qupey_type == 'Advance Purchase Required' || coupon.qupey_type == 'Other'">{{coupon.coupon_name}}</p>
+          
+          <p class="description">{{coupon.discription}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="couponbutton">
+        <ion-col col-12 class="coupon-button">Redeemed {{coupon.total_redeems}} times.</ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+</ion-content> 

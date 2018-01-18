@@ -1,0 +1,33 @@
+page-tabs {
+
+    .tabs-ios .tab-button-icon{
+        color:rgb(62,88,124) !important;
+    }
+.tabs-ios .tab-button[aria-selected=true] .tab-button-icon{
+        color:#fff !important;
+    }
+    .tabs-md-theme-blue-button .tab-button-icon{
+        color:rgb(62,88,124) !important;
+    }
+.tabs-md-theme-blue-button .tab-button[aria-selected=true] .tab-button-icon{
+        color:#fff !important;
+    }
+    .tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text{
+        color:#fff !important;
+    }
+    .discover{
+        font-size:1em;
+    }
+     .nearby{
+        font-size:1em;
+    }
+     .favorites{
+        font-size:1em;
+    }
+     .wallet{
+        font-size:1em;
+    }
+     .profile{
+        font-size:1em;
+    }   
+}

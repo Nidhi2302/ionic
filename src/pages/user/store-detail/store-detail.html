@@ -1,0 +1,171 @@
+<!--
+  Generated template for the StoreDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="custom-header">
+  <ion-grid no-padding>
+    <ion-row no-padding>
+      <ion-col col-12 no-padding>
+          <img src="assets/business-image/VendorDefault.jpg" class="business-background" *ngIf="storeDetails.banner_url==null"/>
+          <img src="{{storeDetails.banner_url}}" class="business-background" *ngIf="storeDetails.banner_url!=null"/>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid  no-padding>
+  <ion-row>
+    <ion-col col-2 class="back-arrow">
+      <ion-icon name="arrow-back" (click)="previous()"></ion-icon>
+    </ion-col>
+    <ion-col col-8 text-center>
+      <div class="business-logo">
+        <img class="logo-img" src="assets/business-logo/user-default.png" *ngIf="storeDetails.logo_url==null"/>
+        <img class="logo-img" src="{{storeDetails.logo_url}}" *ngIf="storeDetails.logo_url!=null"/>        
+      </div>
+    </ion-col>
+    <ion-col col-2 text-center>
+      <div class="follow-heart" *ngIf="storeDetails.state.isFav">
+      <ion-icon name="md-heart" (click)="setFollow('isFav',storeDetails,'like')" ></ion-icon>
+      </div>
+      <div class="unfollow-heart"  *ngIf="!storeDetails.state.isFav">
+      <ion-icon name="md-heart" (click)="setFollow('isFav',storeDetails,'like')"></ion-icon>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col text-center no-padding>
+      <ion-label class="business-name">{{storeDetails.vendorname}}</ion-label>
+    </ion-col>
+  </ion-row>
+  </ion-grid>
+</ion-header>
+
+
+
+<ion-content no-padding>
+  <ion-row>
+    <ion-col text-center no-padding>
+      <ion-label class="intro-text">{{storeDetails.profile_discrption}}</ion-label>
+    </ion-col>
+  </ion-row>
+  <hr class="divide-line" />
+  <ion-row>
+    <ion-col col-4>
+    </ion-col>
+    <ion-col col-4 *ngIf="!storeDetails.state.isFollow" text-center>
+      <button type="button" ion-button class="publish-btn" color="theme-blue-button" (click)="setFollow('isFollow',storeDetails,'follow')">Follow</button>
+    </ion-col>
+    <ion-col col-4 *ngIf="storeDetails.state.isFollow" text-center>
+      <button type="button" ion-button class="publish-btn" color="theme-red-button" (click)="setFollow('isFollow',storeDetails,'follow')">Unfollow</button>
+    </ion-col>
+    <ion-col col-4>
+    </ion-col>
+  </ion-row>
+  <hr class="divide-line" />
+
+  <ion-row no-padding>
+    <ion-col col-6 no-padding>
+      <ion-label class="details" text-left no-padding>
+       {{storeDetails.address1}}
+      </ion-label>
+    </ion-col>
+    <ion-col col-6 no-padding>
+      <ion-label class="details" text-right no-padding>
+        {{shopStatus}}
+      </ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row no-padding>
+    <ion-col no-padding>
+      <ion-label class="details" text-left no-padding>
+          {{storeDetails.address2}}
+      </ion-label>
+    </ion-col>
+
+  </ion-row>
+  <ion-row no-padding>
+    <ion-col no-padding>
+      <ion-label class="details" text-left no-padding>
+        {{phoneNum}}
+      </ion-label>
+    </ion-col>
+
+  </ion-row>
+  <ion-row *ngIf="storeDetails.video_url!=null">
+    <ion-col no-padding>
+      <iframe width="100%" height="200px" [src]="videoUrl"></iframe>
+  </ion-col>
+  </ion-row>
+ 
+  <div id="smallMap" (click)="openMap(point)"></div>
+  <ion-row no-padding>
+      <ion-col col-6 no-padding>
+        <ion-label class="details" text-left no-padding>
+            {{storeDetails.distance.calculated | number: '1.1-1'}} miles
+        </ion-label>
+      </ion-col>
+      <ion-col col-6 no-padding>
+        <ion-label class="details" text-right no-padding (click)="openMap(point)">
+          Directions
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <hr class="divide-line" />
+  <ion-row no-padding>
+    <ion-col no-padding>
+      <ion-label class="qupey-title" text-center no-padding>
+        Our Qupeys
+      </ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row no-padding>
+    <ion-col no-padding>
+      <ion-label class="qupey-des" text-center no-padding>
+        Follow us to view our available Qupeys that you can use for yourself or share with friends. If your friends redeem them,
+        we’ll send you even more rewards.
+      </ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-list class="coupon-list">
+    <ion-item *ngFor="let coupon of currentCoupon" [ngClass]="{'coupondetail':storeDetails.state.isFollow && this.coupon.qupey_type != 'Advance Purchase Required' ,'coupondetail-gry':!storeDetails.state.isFollow,'coupondetail-blue':this.coupon.qupey_type == 'Advance Purchase Required' && storeDetails.state.isFollow}">
+      <ion-row class="couponrow">
+        <ion-col col-4>
+            <img [ngClass]="{'logo-img-coupon':storeDetails.state.isFollow && this.coupon.qupey_type != 'Advance Purchase Required' ,'logo-img-coupon-gry':!storeDetails.state.isFollow, 'logo-img-coupon-blue':storeDetails.state.isFollow && this.coupon.qupey_type == 'Advance Purchase Required'}" src="{{storeDetails.logo_url}}" *ngIf="storeDetails.logo_url!=null" />
+            <img [ngClass]="{'logo-img-coupon':storeDetails.state.isFollow && this.coupon.qupey_type != 'Advance Purchase Required','logo-img-coupon-gry':!storeDetails.state.isFollow,'logo-img-coupon-blue':storeDetails.state.isFollow && this.coupon.qupey_type == 'Advance Purchase Required'}" src="assets/business-logo/user-default.png" *ngIf="storeDetails.logo_url==null"/>
+            <p class="expires">Expires {{coupon.expiration_date | todate}}</p>
+        </ion-col>
+        <ion-col col-8>
+            <p class="coupon-title" *ngIf="coupon.qupey_type != 'No Fee' && coupon.qupey_type != 'Advance Purchase Required' && coupon.qupey_type != 'Other'">{{coupon.qupey_type}}</p>
+            <p class="coupon-title" *ngIf="coupon.qupey_type == 'No Fee' || coupon.qupey_type == 'Advance Purchase Required' ||coupon.qupey_type == 'Other'">{{coupon.coupon_name}}</p>
+          <p class="coupon-des">{{coupon.discription}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row [ngClass]="{'couponbutton':storeDetails.state.isFollow  ,'couponbutton-gry':!storeDetails.state.isFollow}">
+        <ion-col class="coupon-button-col" col-4 text-left>
+          <button *ngIf="this.coupon.qupey_type != 'Advance Purchase Required'" ion-button clear class="coupon-button" (click)="openModalWithParams(coupon)" [disabled]="!storeDetails.state.isFollow">Use</button>
+          <button *ngIf="this.coupon.qupey_type == 'Advance Purchase Required' && this.coupon.payment" ion-button clear class="coupon-button" (click)="openModalWithParams(coupon)" [disabled]="!storeDetails.state.isFollow">Use</button>
+          <button *ngIf="this.coupon.qupey_type == 'Advance Purchase Required' && !this.coupon.payment" ion-button clear class="coupon-button" (click)="openModalWithParams(coupon)" [disabled]="!storeDetails.state.isFollow">Buy</button>
+        </ion-col>
+        <ion-col class="coupon-button-col" col-4 text-center>
+          <button ion-button clear class="coupon-button" (click)="saveCoupon(coupon)" [hidden]="coupon.saved!=0" [disabled]="!storeDetails.state.isFollow" >Save</button>
+        </ion-col>
+        <ion-col class="coupon-button-col" col-4 text-right>
+          <button ion-button clear class="coupon-button" (click)="shareCoupon(coupon)" [disabled]="!storeDetails.state.isFollow">Share</button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item class="no-record" text-center *ngIf="currentCoupon.length==0">
+        <ion-label>
+          No Qupey found
+        </ion-label>
+      </ion-item>
+      <ion-infinite-scroll (ionInfinite)="doInfiniteCurrent($event)" threshold="100px">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="Loading more coupons...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+  </ion-list>
+  
+</ion-content>

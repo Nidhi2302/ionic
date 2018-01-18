@@ -1,0 +1,46 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <!--<ion-navbar>
+    <ion-title>login</ion-title>
+  </ion-navbar>-->
+
+</ion-header>
+
+
+<ion-content padding>
+  <div text-center>
+    <img class="iconStyle" *ngIf="userType=='user'" src="assets/icon/user-logo/logo.png" />
+    <img class="iconStyle" *ngIf="userType=='vendor'" src="assets/icon/vendor-logo/logoVendor.png" />
+  </div>
+  <!-- <span class="user-icon iconStyle" *ngIf="userType=='user'"></span>
+  <span class="vendor-icon iconStyle" *ngIf="userType=='vendor'"></span> -->
+
+  <form class="login-form-wrapper" [formGroup]="loginForm" novalidate>
+    <button type="button" ion-button *ngIf="userType=='user'" class="btn-social" (click)="fbLogin()" color="facebook" block>Login with Facebook</button>
+    <button type="button" ion-button *ngIf="userType=='user'" class="btn-social" (click)="googleLogin()" color="google" block>Login with Google</button>
+    <div class="divider" *ngIf="userType=='user'">
+      <hr class="left" />OR
+      <hr class="right" />
+    </div>
+    <ion-list class="list-item">
+      <ion-item>
+        <ion-input type="text" placeholder="Phone, email or username" formControlName="userName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="password" placeholder="Password" formControlName="password" minlength="6" maxlength="30"></ion-input>
+      </ion-item>
+      <ion-label class="help-text" color="font-color" (click)="forgotPwd()">Forgot Password?</ion-label>
+    </ion-list>
+    <div [ngClass]="{'last-btn':userType=='user','last-btn2':userType!='user'}">
+        <button type="button" item-start ion-button class="btn-previous" (click)="previous()" clear>Previous</button>
+        <button type="submit" item-end ion-button class="btn-next" (click)="login(loginForm.value, loginForm.valid)" clear [disabled]=!loginForm.valid>Login</button>
+      </div>
+  </form>
+  
+</ion-content>

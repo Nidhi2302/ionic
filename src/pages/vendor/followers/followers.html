@@ -1,0 +1,46 @@
+
+<ion-header>
+
+    <ion-row>
+      <ion-col col-4 class="back-arrow">
+        <ion-icon name="arrow-back" (click)="clickMenu()"></ion-icon>
+      </ion-col>
+      <ion-col col-4 class="business-logo-follow" text-center>
+        <img class="logo-img-follow" src="{{businessLogo}}" />
+      </ion-col>
+      <ion-col col-4 class="back-arrow"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <h3 class="business-name">{{this.loggedinUser.name}}</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row class="followers">
+      <ion-col text-center >
+        <ion-title class="followers_title">Followers</ion-title>
+      </ion-col>
+    </ion-row>
+   <ion-toolbar class="search-toolbar" no-border-top>
+    <ion-searchbar (ionInput)="filterItems($event)"></ion-searchbar>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list class="listofusers" *ngFor="let followers of followersData">
+     <ion-item>
+        <ion-avatar item-start>
+        <img *ngIf="followers.logo!=null" src="{{followers.logo}}" />
+        <img  *ngIf="followers.logo==null" src="assets/business-logo/user-default.png" />
+        </ion-avatar>
+        <h2 class="uname">{{followers.name}}</h2>
+      </ion-item>
+      
+  </ion-list>
+  <ion-item class="no-record" text-center *ngIf="followersData.length==0">
+      <ion-label class="no-record-label">
+          You don't have any followers currently
+      </ion-label>
+    </ion-item>
+</ion-content>

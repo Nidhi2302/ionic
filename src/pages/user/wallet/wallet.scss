@@ -1,0 +1,241 @@
+page-wallet {
+    .scroll-content{
+       // margin-top: 270px !important;
+      margin-bottom: 49px;
+      overflow-y: hidden;
+      }
+    .logout {
+        position: absolute;
+        bottom: 0;
+        margin-top: 15%;
+    }
+    .title-header {
+        background-color: #fff !important;
+    }
+    .toolbar-title {
+        color: #fff !important;
+    }
+    .coupondetail{
+        background: color($colors,theme-blue-button);
+        border-radius: 4px;
+        padding-left: 0px;
+        margin: 2%;
+        margin-bottom: 4%;
+        width: 96%;
+    
+      }
+      .coupondetail-darkblue{
+        background: color($colors,theme-dark-blue-button);
+        border-radius: 4px;
+        padding-left: 0px;
+        margin: 2%;
+        width: 96%;
+        margin-bottom: 4%;
+      }
+      .coupon-title{
+        color:#fff;
+        font-size: 24px;
+        text-transform: capitalize;
+        white-space: initial;
+      }
+      .coupon-button{
+        color:#fff;
+      }
+      .couponbutton{
+        border-top: 1px solid #fff;
+        padding: 5px;
+      }
+      .couponrow{
+        padding: 5px
+      }
+      .coupondetail-darkblue.item .item-inner {
+         padding-right: 0px;
+        border-bottom: 0.55px solid #c8c7cc;
+      }
+      .res-name-wrapper {
+        box-shadow: unset;
+        height: 300px;
+        overflow-y: scroll;
+        margin-top:10px;
+
+      }
+      .coupondetail-darkblue  .item-inner .input-wrapper .label {
+        margin: 0px;
+      }
+      .coupondetail.item .item-inner {
+        padding-right: 0px;
+       border-bottom: 0.55px solid #c8c7cc;
+     }
+    
+     .coupondetail  .item-inner .input-wrapper .label {
+       margin: 0px;
+     }
+     .item-inner {
+         padding:0px !important;
+     }
+     .description{
+        font-size: 12px;
+        color:#fff;
+        width: 14em;
+        word-wrap: break-word;
+        white-space: normal;
+      }
+      .logo-img-coupon{
+        width: 60px;
+        height: 60px;
+       border-radius: 50%;
+       object-fit: cover;
+       border: 3px solid #3667b1;
+     }
+     .logo-img-coupon-blue{
+        width: 60px;
+        height: 60px;
+       border-radius: 50%;
+       object-fit: cover;
+       border: 3px solid #6692cd;
+     }
+     .expires{
+        font-size: 10px;
+        color:#fff;
+      }
+      .uname{
+        font-family: HelveticaNeue-Roman !important;
+        font-size: 22px;
+        padding: 15px 0 0 5px;
+        color: rgb(14,109,178);
+    }
+    .no-record{
+        border: none !important;
+        color: color($colors,font-color);
+      }
+      .btn-col{
+          padding-top:8px !important;
+      }
+      .no-record-label{
+        white-space: initial;
+      }
+      .list-ios > .item-block:first-child {
+        border-top: none;
+     }
+     .list-md > .item-block:first-child {
+        border-top: none;
+     }
+     .list-md{
+         height: 270px !important;
+     }
+     .item-inner ion-label{
+         margin:0 !important;
+     }
+    .profile-card-wrapper {
+        background: transparent;
+        box-shadow: unset;
+        width: 100%;
+        
+    }
+    .user-name {
+        font-family: HelveticaNeue-Bold;
+        //font-weight: bold;
+        color:#6692CD;
+        font-size: 23px;
+        padding-top: 10px;
+        .icon {
+            color: #6692CD;
+            font-size: 24px;
+        }
+    }
+    .follow{
+        padding:12px 0;
+        h2{color: #6692CD !important;}
+        font-family: HelveticaNeue-Bold;
+    }
+    .user-id {
+        font-size: 15px;
+        color: #8B8989;
+        font-family: HelveticaNeue-Roman;
+    }
+    ion-col img {
+        border-radius: 50%;
+        //height: 100px !important;
+        margin: 0 auto;
+        overflow: hidden;
+        //width: 100px !important;
+        border: 2px solid color($colors,font-color);
+    }
+    ion-avatar img {
+        border-radius: 50%;
+        height: 100px !important;
+        margin: 0 auto;
+        overflow: hidden;
+        width: 100px !important;
+        object-fit: cover;
+        border: 2px solid #6692CD;
+    }
+    .flw-btn{
+        height: 30px;
+        font-size: 18px;
+        width: 100%;
+        padding: 0px 0;
+        margin: 0px 0;
+        font-weight: 400;
+    }
+    .back-arrow{
+        font-size: 2.3em;
+        padding: 6px;
+    }
+    .user-des {
+        font-size: 14px;
+        color: #000;
+        margin: 7px 0 20px 0;
+        white-space: nowrap; 
+       // width: 24.5em; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-family: HelveticaNeue-Roman;
+    }
+    .wrap-word{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 8em;
+    }
+    ion-avatar {
+        margin-top: 30px;
+    }
+    .list-item{
+        border-bottom: 1px solid rgba(149, 152, 154,0.2) !important;
+    }
+    .text-following {
+        border-bottom: 1px solid #cccccc;
+        border-top: 1px solid #cccccc;
+        color: #8b8989;
+        font-size: 15px;
+        padding: 0px 0;
+        font-family: HelveticaNeue-Roman;
+        
+    }
+    .sub-total-text {
+        font-size: 15px;
+        text-align: center;
+        color: #999999;
+    }
+    .sub-total-followers {
+        color: #6692cd;
+        font-size: 37px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .border-bottom {
+        border-bottom: 1px solid #cccccc;
+    }
+    @media (min-width:414px){
+        .res-name-wrapper {
+           height: 360px;
+          }
+         
+    }
+    @media only screen and (max-height:600px){
+        .res-name-wrapper {
+            height: 200px !important;
+           }
+    }   
+}

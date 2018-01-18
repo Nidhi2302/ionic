@@ -1,0 +1,122 @@
+<!--
+  Generated template for the VendorInventoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-row>
+      <ion-col col-4 class="back-arrow-inventory">
+        <ion-icon name="arrow-back" (click)="clickMenu()"></ion-icon>
+      </ion-col>
+
+      <ion-col col-4 class="business-logo-inventory" text-center>
+        <img class="logo-img-inventory" src="{{businessLogo}}" />
+      </ion-col>
+      <ion-col col-4 class="back-arrow-inventory">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <h3 class="business-name-inventory">{{this.loggedinUser.name}}</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row class="followers-inventory">
+      <ion-col text-center>
+        <ion-title class="followers_title-inventory">Inventory</ion-title>
+      </ion-col>
+    </ion-row>
+
+</ion-header>
+
+
+<ion-content no-padding>
+
+<ion-row class="row-content">
+    <ion-col class="leftpanelcol" col-6>
+        Issued
+    </ion-col>
+    <ion-col class="rightpanelcol" text-right col-6>
+        Redeemed
+    </ion-col>
+</ion-row>
+<ion-row class="row-content-num">
+    <ion-col [ngClass]="{'leftpanelcol-count':this.appType!='current','leftpanelcol-count-blue':this.appType=='current'}" col-6>
+        {{currentCount}}
+    </ion-col>
+    <ion-col [ngClass]="{'rightpanelcol-count':this.appType!='expired','rightpanelcol-count-blue':this.appType=='expired'}"  text-right col-6>
+        {{expiryCount}}
+    </ion-col>
+</ion-row>
+<ion-segment class="segment-border" [(ngModel)]="appType">
+      <ion-segment-button class="leftpanel" text-left value="current">
+        CURRENT
+      </ion-segment-button>
+      <ion-segment-button class="rightpanel" text-right value="expired">
+        EXPIRED
+      </ion-segment-button>
+</ion-segment>
+    <ion-row class="line">
+
+    </ion-row>
+  <ion-grid [ngSwitch]="appType">
+    <ion-list *ngSwitchCase="'current'">
+      <ion-item  [ngClass]="{'coupondetail':coupon.qupey_type!='Advance Purchase Required','coupondetail-darkblue':coupon.qupey_type=='Advance Purchase Required'}" *ngFor = "let coupon of currentCoupon">
+        <ion-row class="couponrow">
+            <ion-col col-4>
+              <img [ngClass]="{'logo-img-coupon':coupon.qupey_type!='Advance Purchase Required','logo-img-coupon-blue':coupon.qupey_type=='Advance Purchase Required'}" src="{{businessLogo}}" />
+              <p class="expires">Expires {{coupon.expiration_date | todate}}</p>
+            </ion-col>
+            <ion-col col-8>
+              <p class="coupon-title" *ngIf="coupon.qupey_type != 'No Fee' && coupon.qupey_type != 'Advance Purchase Required' && coupon.qupey_type != 'Other'">{{coupon.qupey_type}}</p>
+              <p class="coupon-title" *ngIf="coupon.qupey_type == 'No Fee' || coupon.qupey_type == 'Advance Purchase Required' || coupon.qupey_type == 'Other'">{{coupon.coupon_name}}</p>
+              <p class="description">{{coupon.discription}}</p></ion-col>
+        </ion-row>
+        <ion-row class="couponbutton">
+            <ion-col col-6><h2 class="coupon-button" [hidden]="coupon.coupon_status=='publish'" (click)="goToPreview(coupon._id)">Preview</h2></ion-col>
+            <ion-col col-6><h2 class="coupon-button" text-right (click)="deleteCoupon(coupon._id,'current')">Delete</h2></ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item class="no-record" text-center *ngIf="currentCoupon.length==0">
+        <ion-label>
+          No Qupey found
+        </ion-label>
+      </ion-item>
+     </ion-list>
+     <ion-infinite-scroll *ngSwitchCase="'current'" (ionInfinite)="doInfiniteCurrent($event)" threshold="100px">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+     <ion-list *ngSwitchCase="'expired'">
+      <ion-item  class="coupondetail" *ngFor = "let coupon of expiredCoupon">
+        <ion-row class="couponrow">
+            <ion-col col-4><img class="logo-img-coupon" src="{{businessLogo}}" /><p class="expires">Expires {{coupon.expiration_date | date: 'MM.dd.yy'}}</p></ion-col>
+            <ion-col col-8>
+                <p class="coupon-title" *ngIf="coupon.qupey_type != 'No Fee' && coupon.qupey_type != 'Advance Purchase Required' && coupon.qupey_type != 'Other'">{{coupon.qupey_type}}</p>
+                <p class="coupon-title" *ngIf="coupon.qupey_type == 'No Fee' || coupon.qupey_type == 'Advance Purchase Required' || coupon.qupey_type == 'Other'">{{coupon.coupon_name}}</p>
+              <p class="description">{{coupon.discription}}</p></ion-col>
+        </ion-row>
+        <ion-row class="couponbutton">
+            <ion-col col-6>
+              <!-- <h2 class="coupon-button" [hidden]="coupon.coupon_status=='publish'" (click)="goToPreview(coupon._id)">Preview</h2> -->
+            </ion-col>
+            <ion-col col-6><h2 class="coupon-button" text-right (click)="deleteCoupon(coupon._id,'expiry')">Delete</h2></ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item class="no-record" text-center *ngIf="expiredCoupon.length==0">
+          <ion-label>
+            No Qupey found
+          </ion-label>
+        </ion-item>
+     </ion-list>
+     <ion-infinite-scroll *ngSwitchCase="'expired'" (ionInfinite)="doInfiniteExpiry($event)" threshold="100px">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+  </ion-grid>
+</ion-content>
